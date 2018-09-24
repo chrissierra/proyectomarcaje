@@ -1,0 +1,93 @@
+<div class="container" style="margin-top:30px;" *ngIf="!Liberado">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">Generación de pago </h1>
+
+            <p class="lead">En el siguiente formulario deberás armar los haberes para tu trabajador.</p>
+
+            <div class="form-group">
+                <label>Selecciona el tipo de Ítem</label>
+                <select class="form-control" [(ngModel)]="TipoItem">
+                  <option value="0">Haber Imponible</option>
+                  <option value="1">Haber No Imponible</option>
+                  <option value="2">Descuentos</option>
+                </select>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Escribe la glosa del ítem que quieras agregar</label>
+                <input [(ngModel)]="GlosaHaber" type="text" class="form-control" placeholder="Ejemplo: Bono Ventas">
+                <small id="emailHelp" class="form-text text-muted">Glosa de haber imponible.</small>
+            </div>
+
+
+
+            <button (click)="agregar_haberes(GlosaHaber)" class="btn btn-warning ">Agregar Haberes</button>
+        </div>
+    </div>
+
+    <div class="container" style="margin-bottom:50px;">
+        <ul class="list-group">
+            <li class="list-group-item">Días trabajados / Calendarizados Mes anterior {{ MesEnCurso -1 }}/{{anioEnCurso}} : {{ DiasCalendarizados }} / {{ DiasTrabajados }}</li>
+            <li class="list-group-item">Total imponible {{ TotalHaberImponible | currency }}</li>
+            <li class="list-group-item">Sueldo a Pagar {{ SueldoPagar | currency }}</li>
+            <li class="list-group-item">Descuento AFP: {{ total_afp | currency }}</li>
+            <li class="list-group-item"> Descuento ISAPRE: {{ total_isapre | currency }}</li>
+            <li class="list-group-item">Total Dsctos: {{ TotalDescuentos | currency }}</li>
+            <li class="list-group-item">Total haberes no imponibles: {{ TotalHaberNoImponible | currency }}</li>
+            <li class="list-group-item">Total haberes: {{ TotalHaberesTotales | currency }}</li>
+        </ul>
+    </div>
+
+
+
+    <form #forma='ngForm' (ngSubmit)="guardar(forma)" #forma="ngForm">
+
+        <div *ngFor="let HaberesImponibles_ of HaberesImponibles; let i = index" class="form-group row">
+
+            <div class="col">
+                <label> {{ HaberesImponibles_ }} </label>
+            </div>
+
+            <div class="col">
+                <input (input)="FuncionHaberesImponibles()" type="number" class="form-control" name="{{HaberesImponibles_}}" [(ngModel)]="ValorHaberes[i]">
+            </div>
+
+            <div class="col">
+                <button (click)="BorrarHaberImponible(i)" type="button" class="btn btn-danger">Eliminar</button>
+                <!--<span  (click)="BorrarHaberImponible(i)"  class="badge badge-warning">Borrar</span>-->
+            </div>
+
+            <div class="col"></div>
+
+        </div>
+
+        <div *ngFor="let HaberesNoImponibles_ of HaberesNoImponibles; let i = index" class="form-group row">
+            <div class="col">
+                <label> {{ HaberesNoImponibles_ }} </label>
+            </div>
+
+            <div class="col">
+                <input (input)="FuncionHaberesNoImponibles()" type="number" class="form-control" name="{{HaberesNoImponibles_}}" [(ngModel)]="ValorHaberesNo[i]">
+            </div>
+
+            <div class="col">
+                <!-- <span  (click)="BorrarHaberNoImponible(i)"  class="badge badge-warning">Borrar</span>-->
+                <button (click)="BorrarHaberNoImponible(i)" type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+
+
+            <div class="col"></div>
+        </div>
+
+        <hr>
+        <br>
+        <button type="submit" class="btn btn-primary">Guardar liquidación</button>
+    </form>
+</div>
+
+<div class="container" style="margin-top:30px;" *ngIf="Liberado">
+<h2>Liberado!</h2>
+</div>
