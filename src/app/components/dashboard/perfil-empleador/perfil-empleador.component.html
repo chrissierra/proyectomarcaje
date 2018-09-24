@@ -33,7 +33,7 @@
    <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Ingresa tu rut</ng-template>
       <mat-form-field>
-        <input matInput placeholder="RUT" formControlName="firstCtrl" required>
+        <input (input)="GuardarFotos()" matInput placeholder="RUT" formControlName="firstCtrl" required>
       </mat-form-field>
       <div>
         <button (click)="BuscarRutMovimientosAsociados()" mat-button matStepperNext>Siguiente</button>
@@ -41,14 +41,79 @@
     </form>
   
   </mat-step>
+
+
+
+
+
+  <!-- ********************************************************  -->
+
+<!-- SIGUE CON SEGUNDO PASO: -->
+
   <mat-step [stepControl]="secondFormGroup">
  <ng-template matStepLabel>Marca Movimiento</ng-template>
+      
+
+
+<agm-map style="height:300px;" [latitude]="lat" [longitude]="long"  zoomControl="true">
+  <agm-marker [latitude]="lat" [longitude]="long"  ></agm-marker>
+</agm-map>
+
+
+ <li *ngFor="let item of movimientos  | async">{{ item.nombre }} </li>
+
+
+
+     <!-- <div class="container">
+        <div style="text-align:center">
+
+
+          <li *ngFor="let item of movimientos  | async">{{ item.nombre }} </li>
+  <h1>
+    Ngx-Webcam Demo
+  </h1>
+
+  <div> -->
+    <webcam [height]="0" [width]="0" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+            [videoOptions]="videoOptions"
+            (cameraSwitched)="cameraWasSwitched($event)"
+            (initError)="handleInitError($event)"
+    ></webcam><!--
+    <br/>
+    <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+    <button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button>
+    <br/>
+    <button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next Webcam</button>
+    <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
+    <br/>
+    DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
+    <button (click)="showNextWebcam(deviceId);">Activate</button>
+  </div>
+</div>
+
+<div class="snapshot" *ngIf="webcamImage">
+  <h2>Nice one!</h2>
+  <img [src]="webcamImage.imageAsDataUrl"/>
+</div>
+
+<h4 *ngIf="errors.length > 0">Messages:</h4>
+<ul *ngFor="let error of errors">
+  <li>{{error | json}}</li>
+</ul>
+      </div>
+-->
+
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
       </div>
     
   </mat-step>
+
+<!-- ********************************************************  -->
+
+<!-- SIGUE CON TERCER PASO: -->
 
   <mat-step>
     <ng-template matStepLabel>Listo!</ng-template>

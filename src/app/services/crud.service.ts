@@ -43,12 +43,25 @@ return this.trabajadorCollection.add( trabajador );
 
 
 
- horasTranscurridas(t) {
+ horasTranscurridasPorParametro(t) {
     let  minutes = 1000 * 60;
     let  hours = minutes * 60;
     let  days = hours * 24;
     let  years = days * 365;
     //let  d = new Date();
+    //var t= d.getTime();
+
+    let y = Math.round(t / hours);
+
+    return y;
+}
+
+ horasTranscurridas(t) {
+    let  minutes = 1000 * 60;
+    let  hours = minutes * 60;
+    let  days = hours * 24;
+    let  years = days * 365;
+   // let  d = new Date();
     //var t= d.getTime();
 
     let y = Math.round(t / hours);

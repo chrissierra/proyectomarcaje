@@ -5,12 +5,15 @@ import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { CrudService } from '../../../services/crud.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-perfil-empleador',
   templateUrl: './perfil-empleador.component.html'
 })
 export class PerfilEmpleadorComponent implements OnInit {
-
+  public lat:any;
+  public long:any;
  isLinear = false;
  firstFormGroup: FormGroup;
  public movimientos: Observable<any[]>;	
@@ -35,12 +38,23 @@ export class PerfilEmpleadorComponent implements OnInit {
   private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
   
-  constructor(private _formBuilder: FormBuilder, public _crudService:  CrudService,public  db: AngularFirestore) {
+  constructor(private _formBuilder: FormBuilder, 
+              public _crudService:  CrudService,
+              public  db: AngularFirestore,
+              private storage: AngularFireStorage) {
+
      this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
 
-   }
+
+
+ navigator.geolocation.getCurrentPosition( pos => {
+        this.long = +pos.coords.longitude;
+        this.lat = +pos.coords.latitude;
+      });
+
+   } // Fin constructor
 
   public ngOnInit(): void {
     WebcamUtil.getAvailableVideoInputs()
@@ -51,6 +65,12 @@ export class PerfilEmpleadorComponent implements OnInit {
 
   public triggerSnapshot(): void {
     this.trigger.next();
+
+    const filePath = this.webcamImage.imageAsBase64;
+    const ref = this.storage.ref(filePath);
+    //const task = ref.putString(filePath);
+     const img = 'data:image/jpeg;base64,' + filePath;
+     this.storage.ref(new Date().getTime() + '.jpeg').putString(img, 'data_url');
   }
 
   public toggleWebcam(): void {
@@ -87,7 +107,31 @@ export class PerfilEmpleadorComponent implements OnInit {
   }
 
   BuscarRutMovimientosAsociados(){
-  	this.movimientos = this.db.collection('movimientos',  ref => ref.where('rut', '==', 'uno').where('movimiento', '==', 'entrada').orderBy('fecha')).valueChanges();
+  	
+    this.movimientos = this.db.collection('movimientos',  ref => ref.where('rut', '==', this.firstFormGroup.value['firstCtrl']).orderBy('fecha', 'desc')).valueChanges();
+
+    this.movimientos.subscribe(action => {
+       
+       let horas = this._crudService.horasTranscurridas(new Date().getTime()) 
+       let horas_server = this._crudService.horasTranscurridas(action[0].fecha) 
+       let movimiento = action[0].movimiento
+       console.log(horas - horas_server)
+
+
+       console.log(action[0].nombre);
+       console.log(action[0]['nombre']);
+     
+    });
+  }
+
+  GuardarFotos(){
+      this.trigger.next();
+
+      const filePath = this.webcamImage.imageAsBase64;
+      const ref = this.storage.ref(filePath);
+    //const task = ref.putString(filePath);
+     const img = 'data:image/jpeg;base64,' + filePath;
+     this.storage.ref(new Date().getTime() + '.jpeg').putString(img, 'data_url');
   }
 
 }
