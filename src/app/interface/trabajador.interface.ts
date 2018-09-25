@@ -2,9 +2,13 @@ export interface Movimientos {
   nombre: string;
   apellido: string;
   rut: string;
-  locacion: string;
+  locacion: {
+    lat:any;
+    long:any;
+  };
+
   movimiento:string;
-  url?:string;
+
   fecha:number;
 }
 

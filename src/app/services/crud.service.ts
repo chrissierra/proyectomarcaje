@@ -42,6 +42,28 @@ return this.trabajadorCollection.add( trabajador );
 }
 
 
+ingresarTurno(nombre_, apellido_, rut_, lat_, long_, movimiento_, fecha_){
+
+let movimiento: Movimientos = {
+      nombre: nombre_,
+      apellido: apellido_,
+      rut: rut_,
+      locacion: {
+              lat: lat_,
+              long:long_
+      },
+      movimiento:movimiento_,
+      fecha:fecha_
+
+}
+
+
+
+this.MovimientosCollection = this.afs.collection<Movimientos>('movimientos' );
+return this.MovimientosCollection.add( movimiento );
+}
+
+
 
  horasTranscurridasPorParametro(t) {
     let  minutes = 1000 * 60;

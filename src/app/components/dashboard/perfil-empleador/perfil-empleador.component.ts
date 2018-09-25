@@ -12,30 +12,36 @@ import { map } from 'rxjs/operators';
   templateUrl: './perfil-empleador.component.html'
 })
 export class PerfilEmpleadorComponent implements OnInit {
-  public lat:any;
-  public long:any;
- isLinear = false;
- firstFormGroup: FormGroup;
- public movimientos: Observable<any[]>;	
 
-  // toggle webcam on/off
-  public showWebcam = true;
-  public allowCameraSwitch = true;
-  public multipleWebcamsAvailable = false;
-  public deviceId: string;
-  public videoOptions: MediaTrackConstraints = {
-    // width: {ideal: 1024},
-    // height: {ideal: 576}
-  };
-  public errors: WebcamInitError[] = [];
+      public lat:any;
+      public long:any;
+      isLinear = false;
+      firstFormGroup: FormGroup;
+      public movimientos: Observable<any[]>;	
+      public UltimoMovimiento:string;
+      public diferenciaUltimoRegistro:number;
+      public nombreTrabajador:string;
+      public apellidoTrabajador:string;
+      public rutTrabajador:string;
+      // toggle webcam on/off
+      public showWebcam = true;
+      public allowCameraSwitch = true;
+      public multipleWebcamsAvailable = false;
+      public deviceId: string;
+      public videoOptions: MediaTrackConstraints = {
+          // width: {ideal: 1024},
+          // height: {ideal: 576}
+       };
+  
+       public errors: WebcamInitError[] = [];
 
-  // latest snapshot
-  public webcamImage: WebcamImage = null;
+        // latest snapshot
+       public webcamImage: WebcamImage = null;
 
-  // webcam snapshot trigger
-  private trigger: Subject<void> = new Subject<void>();
-  // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
-  private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
+        // webcam snapshot trigger
+       private trigger: Subject<void> = new Subject<void>();
+        // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
+       private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
   
   constructor(private _formBuilder: FormBuilder, 
@@ -110,19 +116,32 @@ export class PerfilEmpleadorComponent implements OnInit {
   	
     this.movimientos = this.db.collection('movimientos',  ref => ref.where('rut', '==', this.firstFormGroup.value['firstCtrl']).orderBy('fecha', 'desc')).valueChanges();
 
-    this.movimientos.subscribe(action => {
+    this.movimientos.subscribe(action => {  // console.log(action[0].nombre); Así se obtienen los datos 
        
-       let horas = this._crudService.horasTranscurridas(new Date().getTime()) 
-       let horas_server = this._crudService.horasTranscurridas(action[0].fecha) 
-       let movimiento = action[0].movimiento
-       console.log(horas - horas_server)
 
 
-       console.log(action[0].nombre);
-       console.log(action[0]['nombre']);
+              try{
+                           const horas = this._crudService.horasTranscurridas(new Date().getTime()) 
+                           const horas_server = this._crudService.horasTranscurridas(action[0].fecha); 
+                           this.UltimoMovimiento = action[0].movimiento
+                           this.diferenciaUltimoRegistro= (horas - horas_server);
+                           this.nombreTrabajador = action[0].nombre;
+                           this.apellidoTrabajador = action[0].apellido;
+                           this.rutTrabajador = action[0].rut;
+
+                          // this.RealizarMarcaje(diferenciaHoras, movimiento, action[0].nombre, action[0].apellido, action[0].rut );
+                           
+                          
+              }catch(err){
+
+                console.log("NO HAY REGISTROS")
+              
+              }
+
+    
      
-    });
-  }
+    }); // Fin Subscribe
+  } // Fin función BuscarRutMovimientosAsociados
 
   GuardarFotos(){
       this.trigger.next();
@@ -131,7 +150,27 @@ export class PerfilEmpleadorComponent implements OnInit {
       const ref = this.storage.ref(filePath);
     //const task = ref.putString(filePath);
      const img = 'data:image/jpeg;base64,' + filePath;
-     this.storage.ref(new Date().getTime() + '.jpeg').putString(img, 'data_url');
-  }
+     this.storage.ref(new Date().getTime() + '.jpeg').putString(img, 'data_url', { customMetadata: { blah: 'blah' } });
+  } // Fin función GuardarFotos
+
+
+
+
+  private RealizarMarcaje(diferenciaHoras, movimiento, nombre_, apellido_, rut_){
+     
+     if(diferenciaHoras < 13 && movimiento == 'entrada'){
+      // marca salida
+       this._crudService.ingresarTurno(nombre_, apellido_, rut_, this.lat, this.long, 'salida', new Date().getTime());
+     }else if ( diferenciaHoras > 13){
+      //marca entrada
+       this._crudService.ingresarTurno(nombre_, apellido_, rut_, this.lat, this.long, 'entrada', new Date().getTime());
+
+     }else{
+       console.log("Caso que ya marcó bien los turnos del día")
+     }
+  
+
+    
+  } // Fin función RealizarMarcaje
 
 }
