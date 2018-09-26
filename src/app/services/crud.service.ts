@@ -10,6 +10,9 @@ export class CrudService {
 	private itemsCollection: AngularFirestoreCollection<Mensaje>;
 	private trabajadorCollection: AngularFirestoreCollection<Trabajador>;
 	private MovimientosCollection: AngularFirestoreCollection<Movimientos>;
+
+  
+  trabajadores: Observable<Trabajador[]>;
 // Creamos un alias para el AngularFirestore, en este caso se llamará AFS
 constructor(private afs: AngularFirestore) {
 // Esta impresion es opcional, la agrego para confirmar que el servicio funcione correctamente
@@ -28,12 +31,13 @@ agregarMensajes(){
 } // Fin Función agregarMensajes
 
 
-ingresarTrabajador(nombre_, apellido_, rut_){
+ingresarTrabajador(nombre_, apellido_, rut_, cargo_){
 
 let trabajador: Trabajador = {
 	nombre: nombre_,
 	apellido: apellido_,
-	rut: rut_
+	rut: rut_,
+  cargo: cargo_
 
 }
 
@@ -89,6 +93,11 @@ return this.MovimientosCollection.add( movimiento );
     let y = Math.round(t / hours);
 
     return y;
+}
+
+
+getTrabajadores(){
+   return  this.afs.collection<Trabajador>('trabajadores').valueChanges();
 }
 
 }

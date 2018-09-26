@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
-
+cargo:string;
 nombre:string;
 apellido:string;
 rut:string;
@@ -37,7 +37,7 @@ constructor(public _crudService:  CrudService, db: AngularFirestore) {
   }
 
 IngresarTrabajador(){
-this._crudService.ingresarTrabajador(this.nombre, this.apellido, this.rut);
+this._crudService.ingresarTrabajador(this.nombre, this.apellido, this.rut, this.cargo);
 } // Fin función IngresarTrabajador
 
 

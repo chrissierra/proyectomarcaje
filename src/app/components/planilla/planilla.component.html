@@ -20,8 +20,8 @@
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
-                <th scope="col">Puesto</th>
-                <th scope="col">Isapre</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Rut</th>
             </tr>
         </thead>
 
@@ -29,10 +29,10 @@
 
             <tr *ngFor="let empleados of empleados">
 
-                <th [routerLink]="['/PerfilTrabajador', empleados.id]" scope="row" style="cursor:pointer">{{ empleados.nombre }}</th>
+                <th [routerLink]="['/DashBoard', empleados.rut]" scope="row" style="cursor:pointer">{{ empleados.nombre }}</th>
                 <td>{{ empleados.apellido }}</td>
-                <td>{{ empleados.puesto }}</td>
-                <td>{{ empleados.isapre }}</td>
+                <td>{{ empleados.cargo }}</td>
+                <td>{{ empleados.rut }}</td>
 
             </tr>
 

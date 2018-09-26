@@ -16,6 +16,7 @@ export interface Trabajador {
   nombre: string;
   apellido: string;
   rut: string;
+  cargo:string;
   url?:string;
 }
 

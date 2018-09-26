@@ -33,7 +33,7 @@ import { ResumenComponent } from './components/perfil-trabajador/resumen/resumen
 
 const routes: Routes = [
   { path: 'Login', component: LoginComponent },
-  { path: 'DashBoard', component: DashBoardComponent, children: [
+  { path: 'DashBoard/:rut', component: DashBoardComponent, children: [
    
     { path: 'PerfilEmpleador' , component: PerfilEmpleadorComponent},
     { path: 'IngresoSucursal' , component: IngresoSucursalComponent},

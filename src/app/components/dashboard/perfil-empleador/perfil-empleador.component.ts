@@ -7,12 +7,15 @@ import { CrudService } from '../../../services/crud.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { map } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-perfil-empleador',
   templateUrl: './perfil-empleador.component.html'
 })
 export class PerfilEmpleadorComponent implements OnInit {
-
+meta: Observable<any>;
+public rut:any;
+public currentMov: any;
       public lat:any;
       public long:any;
       isLinear = false;
@@ -44,16 +47,21 @@ export class PerfilEmpleadorComponent implements OnInit {
        private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
   
-  constructor(private _formBuilder: FormBuilder, 
+  constructor(private param: ActivatedRoute,
+              private _formBuilder: FormBuilder, 
               public _crudService:  CrudService,
               public  db: AngularFirestore,
               private storage: AngularFireStorage) {
 
+ this.rut = this.param.parent.snapshot.paramMap.get('rut');
+    
      this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
 
-
+   const ref = this.storage.ref('179614936/1.jpg');
+     this.meta = ref.getDownloadURL();
+     console.log( this.meta)
 
  navigator.geolocation.getCurrentPosition( pos => {
         this.long = +pos.coords.longitude;
@@ -76,7 +84,7 @@ export class PerfilEmpleadorComponent implements OnInit {
     const ref = this.storage.ref(filePath);
     //const task = ref.putString(filePath);
      const img = 'data:image/jpeg;base64,' + filePath;
-     this.storage.ref(new Date().getTime() + '.jpeg').putString(img, 'data_url');
+     this.storage.ref("1818/"+new Date().getTime() + '.jpeg').putString(img, 'data_url');
   }
 
   public toggleWebcam(): void {
@@ -128,7 +136,7 @@ export class PerfilEmpleadorComponent implements OnInit {
                            this.nombreTrabajador = action[0].nombre;
                            this.apellidoTrabajador = action[0].apellido;
                            this.rutTrabajador = action[0].rut;
-
+this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.nombreTrabajador, this.apellidoTrabajador,  this.rutTrabajador )
                           // this.RealizarMarcaje(diferenciaHoras, movimiento, action[0].nombre, action[0].apellido, action[0].rut );
                            
                           
@@ -150,7 +158,7 @@ export class PerfilEmpleadorComponent implements OnInit {
       const ref = this.storage.ref(filePath);
     //const task = ref.putString(filePath);
      const img = 'data:image/jpeg;base64,' + filePath;
-     this.storage.ref(new Date().getTime() + '.jpeg').putString(img, 'data_url', { customMetadata: { blah: 'blah' } });
+     this.storage.ref( this.rut+'/'+new Date().getTime() + '.jpeg').putString(img, 'data_url', { customMetadata: { blah: 'blah' } });
   } // Fin función GuardarFotos
 
 
@@ -172,5 +180,28 @@ export class PerfilEmpleadorComponent implements OnInit {
 
     
   } // Fin función RealizarMarcaje
+
+
+    private getMovimiento(diferenciaHoras, movimiento, nombre_, apellido_, rut_){
+     
+     if(diferenciaHoras < 13 && movimiento == 'entrada'){
+      // marca salida
+      
+     }else if ( diferenciaHoras > 13){
+      //marca entrada
+      
+      this.currentMov = 'entrada'
+     }else{
+       console.log("Caso que ya marcó bien los turnos del día")
+       this.currentMov = 'salida'
+     }
+  
+
+    
+  } // Fin función RealizarMarcaje
+
+  FuncionMarcarEntrada(){
+    this.RealizarMarcaje(this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.nombreTrabajador, this.apellidoTrabajador,  this.rutTrabajador);
+  }
 
 }

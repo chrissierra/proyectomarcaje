@@ -32,6 +32,12 @@
 
    <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Ingresa tu rut</ng-template>
+
+
+<!--<pre><code>{{ meta | async }}</code></pre>
+<img [src]=" meta | async">-->
+
+
       <mat-form-field>
         <input (input)="GuardarFotos()" matInput placeholder="RUT" formControlName="firstCtrl" required>
       </mat-form-field>
@@ -55,19 +61,27 @@
       
 
 
-<agm-map style="height:300px;" [latitude]="lat" [longitude]="long"  zoomControl="true">
+
+
+<div class="card" >
+ <agm-map style="height:300px;" [latitude]="lat" [longitude]="long"  zoomControl="true">
   <agm-marker [latitude]="lat" [longitude]="long"  ></agm-marker>
 </agm-map>
-
-
- <li *ngFor="let item of movimientos  | async">{{ item.nombre }} </li>
+  <div class="card-body">
+    <h5 class="card-title">Marca Movimiento</h5>
+    <p class="card-text">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.</p>
+  <button *ngIf="currentMov == 'entrada' " type="button" class="btn btn-outline-primary">Marca Entrada</button>
+  <button  *ngIf="currentMov == 'salida' "  type="button" class="btn btn-outline-primary">Marca Salida</button>
+  </div>
+</div>
+ 
 
 
 
      <!-- <div class="container">
         <div style="text-align:center">
 
-
+<li *ngFor="let item of movimientos  | async">{{ item.nombre }} </li>
           <li *ngFor="let item of movimientos  | async">{{ item.nombre }} </li>
   <h1>
     Ngx-Webcam Demo
