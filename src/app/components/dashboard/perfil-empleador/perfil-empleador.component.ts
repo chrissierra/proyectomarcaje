@@ -61,7 +61,7 @@ export class PerfilEmpleadorComponent implements OnInit {
       firstCtrl: ['', Validators.required]
     });
 
-   const ref = this.storage.ref('179614936/1.jpg');
+   const ref = this.storage.ref('179614936');
      this.meta = ref.getDownloadURL();
      console.log( this.meta)
 
@@ -161,7 +161,10 @@ this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.n
       const ref = this.storage.ref(filePath);
     //const task = ref.putString(filePath);
      const img = 'data:image/jpeg;base64,' + filePath;
-     this.storage.ref( this.rut+'/'+new Date().getTime() + '.jpeg').putString(img, 'data_url', { customMetadata: { blah: 'blah' } });
+     console.log(this._crudService.diasTranscurridas(new Date().getTime()));
+     let url = this.rut+'/'+this._crudService.diasTranscurridas(new Date().getTime())+'/'+this._crudService.minutosTranscurridas(new Date().getTime())+'/'+new Date().getTime() + '.jpeg';
+     this.storage.ref( this.rut+'/'+this._crudService.diasTranscurridas(new Date().getTime())+'/'+this._crudService.minutosTranscurridas(new Date().getTime())+'/'+new Date().getTime() + '.jpeg').putString(img, 'data_url', { customMetadata: { blah: 'blah' } });
+     this._crudService.ingresarUrlaDB(this.rut, new Date().getTime(),url )
   } // Fin función GuardarFotos
 
 

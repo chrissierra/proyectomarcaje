@@ -69,6 +69,21 @@ return this.MovimientosCollection.add( movimiento );
 
 
 
+ingresarUrlaDB( rut_, t, url_){
+
+let urls: any = {
+      rut: rut_,
+      minuto: this.minutosTranscurridas(t),
+      url: url_
+
+}
+
+
+
+this.MovimientosCollection = this.afs.collection('urlImagenes' );
+return this.MovimientosCollection.add( urls );
+}
+
  horasTranscurridasPorParametro(t) {
     let  minutes = 1000 * 60;
     let  hours = minutes * 60;
@@ -96,8 +111,42 @@ return this.MovimientosCollection.add( movimiento );
 }
 
 
+diasTranscurridas(t) {
+    let  minutes = 1000 * 60;
+    let  hours = minutes * 60;
+    let  days = hours * 24;
+    let  years = days * 365;
+   // let  d = new Date();
+    //var t= d.getTime();
+
+    let y = Math.round(t / days);
+
+    return y;
+}
+
+
+minutosTranscurridas(t) {
+    let  minutes = 1000 * 60;
+    let  hours = minutes * 60;
+    let  days = hours * 24;
+    let  years = days * 365;
+   // let  d = new Date();
+    //var t= d.getTime();
+
+    let y = Math.round(t / minutes);
+
+    return y;
+}
+
 getTrabajadores(){
    return  this.afs.collection<Trabajador>('trabajadores').valueChanges();
+}
+
+
+
+getMovimientos(){
+  return this.afs.collection<Movimientos>('movimientos' ).valueChanges();
+  
 }
 
 }

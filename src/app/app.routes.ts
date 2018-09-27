@@ -31,8 +31,18 @@ import { HaberNoImponibleComponent } from './components/perfil-trabajador/haber-
 import { SueldosLiberadosComponent } from './components/perfil-trabajador/SueldosLiberados/SueldosLiberadosComponent.component';
 import { ResumenComponent } from './components/perfil-trabajador/resumen/resumen.component';
 
+
+import { LibroAsistenciaComponent } from './components/libro-asistencia/libro-asistencia.component';
+import { VisualizarturnosComponent } from './components/libro-asistencia/visualizarturnos/visualizarturnos.component';
+
 const routes: Routes = [
   { path: 'Login', component: LoginComponent },
+  { path: 'LibroAsistencia', component: LibroAsistenciaComponent, children: [
+
+    { path: '**', component: VisualizarturnosComponent }
+
+  ]},
+  
   { path: 'DashBoard/:rut', component: DashBoardComponent, children: [
    
     { path: 'PerfilEmpleador' , component: PerfilEmpleadorComponent},

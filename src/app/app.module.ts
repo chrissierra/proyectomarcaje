@@ -15,7 +15,10 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 
+ import {MatNativeDateModule} from '@angular/material';
 //Firebase
 import { environment } from './enviroments/enviroments';
 import { AngularFireModule } from '@angular/fire';
@@ -60,6 +63,8 @@ import { LiberarSueldosComponent } from './components/perfil-trabajador/liberar-
 import { HaberNoImponibleComponent } from './components/perfil-trabajador/haber-no-imponible/haber-no-imponible.component';
 import { SueldosLiberadosComponent } from './components/perfil-trabajador/SueldosLiberados/SueldosLiberadosComponent.component';
 import { ResumenComponent } from './components/perfil-trabajador/resumen/resumen.component';
+import { LibroAsistenciaComponent } from './components/libro-asistencia/libro-asistencia.component';
+import { VisualizarturnosComponent } from './components/libro-asistencia/visualizarturnos/visualizarturnos.component';
 
 // servicios
 import { EmpleadoService } from './components/ingresa/interfaces/empleado.service';
@@ -77,6 +82,7 @@ import { AppService } from './app.service';
 import { SueldosService } from './services/sueldos.service';
 import { VisualizacionLiquidacionesComponent } from './components/perfil-trabajador/visualizacion-liquidaciones/visualizacion-liquidaciones.component';
 import { CrudService } from './services/crud.service';
+
 
 
 
@@ -111,7 +117,9 @@ import { CrudService } from './services/crud.service';
     HaberNoImponibleComponent,
     SueldosLiberadosComponent,
     ResumenComponent,
-    VisualizacionLiquidacionesComponent
+    VisualizacionLiquidacionesComponent,
+    LibroAsistenciaComponent,
+    VisualizarturnosComponent
   ],
   imports: [
     BrowserModule,
@@ -131,9 +139,12 @@ import { CrudService } from './services/crud.service';
     MatSnackBarModule,
     MatGridListModule,
     MatListModule,
+    MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+   
+    MatNativeDateModule,
     MatStepperModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAdXTtlsdlutwezrknwZowxSwHV0r__pnE'
@@ -150,6 +161,7 @@ import { CrudService } from './services/crud.service';
               GuardarSucursalService,
               MarcajeServiceService,
               AppService,
+              MatDatepickerModule,
               SueldosService,
               CrudService],
   bootstrap: [AppComponent]
