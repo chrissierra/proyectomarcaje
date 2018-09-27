@@ -13,9 +13,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './perfil-empleador.component.html'
 })
 export class PerfilEmpleadorComponent implements OnInit {
-meta: Observable<any>;
-public rut:any;
-public currentMov: any;
+      
+      meta: Observable<any>;
+      public rut:any;
+      public currentMov: any;
       public lat:any;
       public long:any;
       isLinear = false;
@@ -23,6 +24,7 @@ public currentMov: any;
       public movimientos: Observable<any[]>;	
       public UltimoMovimiento:string;
       public diferenciaUltimoRegistro:number;
+      public primerTurno:boolean = true;
       public nombreTrabajador:string;
       public apellidoTrabajador:string;
       public rutTrabajador:string;
@@ -127,7 +129,7 @@ public currentMov: any;
     this.movimientos.subscribe(action => {  // console.log(action[0].nombre); Así se obtienen los datos 
        
 
-
+console.log(action)
               try{
                            const horas = this._crudService.horasTranscurridas(new Date().getTime()) 
                            const horas_server = this._crudService.horasTranscurridas(action[0].fecha); 
@@ -136,14 +138,15 @@ public currentMov: any;
                            this.nombreTrabajador = action[0].nombre;
                            this.apellidoTrabajador = action[0].apellido;
                            this.rutTrabajador = action[0].rut;
+                           this.primerTurno = false;
 this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.nombreTrabajador, this.apellidoTrabajador,  this.rutTrabajador )
                           // this.RealizarMarcaje(diferenciaHoras, movimiento, action[0].nombre, action[0].apellido, action[0].rut );
                            
                           
               }catch(err){
 
-                console.log("NO HAY REGISTROS")
-              
+                console.log("NO HAY REGISTROS", err)
+               this.currentMov = 'entrada'
               }
 
     
@@ -186,14 +189,15 @@ this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.n
      
      if(diferenciaHoras < 13 && movimiento == 'entrada'){
       // marca salida
-      
+       this.currentMov = 'salida'
      }else if ( diferenciaHoras > 13){
       //marca entrada
       
       this.currentMov = 'entrada'
      }else{
-       console.log("Caso que ya marcó bien los turnos del día")
-       this.currentMov = 'salida'
+       console.log("Caso que ya marcó bien los turnos del día aver")
+      this.currentMov = 'listo'
+      console.log(this.currentMov)
      }
   
 
@@ -201,7 +205,25 @@ this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.n
   } // Fin función RealizarMarcaje
 
   FuncionMarcarEntrada(){
-    this.RealizarMarcaje(this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.nombreTrabajador, this.apellidoTrabajador,  this.rutTrabajador);
-  }
+
+    if(this.primerTurno){
+
+this._crudService.getTrabajadores().subscribe(data => {
+   console.log(data[0])   
+ this.RealizarMarcaje(15, 'salida' ,data[0].nombre, data[0].apellido,  data[0].rut);
+
+
+      });
+
+    }else{
+
+          this.RealizarMarcaje(this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.nombreTrabajador, this.apellidoTrabajador,  this.rutTrabajador);
+
+    }
+
+
+    if(this.currentMov == 'salida')
+      this.currentMov == 'listo'
+  } // Fin función FuncionMarcarEntrada
 
 }

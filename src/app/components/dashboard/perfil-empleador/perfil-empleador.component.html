@@ -69,9 +69,13 @@
 </agm-map>
   <div class="card-body">
     <h5 class="card-title">Marca Movimiento</h5>
-    <p class="card-text">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.</p>
-  <button *ngIf="currentMov == 'entrada' " type="button" class="btn btn-outline-primary">Marca Entrada</button>
-  <button  *ngIf="currentMov == 'salida' "  type="button" class="btn btn-outline-primary">Marca Salida</button>
+
+    <p *ngIf="currentMov != 'listo'" class="card-text">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.    </p>  
+
+     <p *ngIf="currentMov == 'listo'" class="card-text">Los turnos de hoy han sido realizados .    </p>  
+  <button (click)="FuncionMarcarEntrada()" *ngIf="currentMov == 'entrada' " type="button" class="btn btn-outline-primary">Marca Entrada</button>
+  <button (click)="FuncionMarcarEntrada()" *ngIf="currentMov == 'salida' "  type="button" class="btn btn-outline-primary">Marca Salida</button>
+
   </div>
 </div>
  
