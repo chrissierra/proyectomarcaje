@@ -60,19 +60,42 @@ export class PerfilEmpleadorComponent implements OnInit {
      this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
-
+/*
    const ref = this.storage.ref('179614936');
      this.meta = ref.getDownloadURL();
      console.log( this.meta)
+*/
+if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition( pos => {
+ alert(" funciona geo")
 
- navigator.geolocation.getCurrentPosition( pos => {
         this.long = +pos.coords.longitude;
         this.lat = +pos.coords.latitude;
+
+        alert(this.long + " /  " + this.lat)
       });
+    } else {
+        alert("no funciona geo")
+    }
+
+
 
    } // Fin constructor
 
   public ngOnInit(): void {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition( pos => {
+ alert(" funciona geo")
+
+        this.long = +pos.coords.longitude;
+        this.lat = +pos.coords.latitude;
+
+        alert(this.long + " /  " + this.lat)
+      });
+    } else {
+        alert("no funciona geo")
+    }
+
     WebcamUtil.getAvailableVideoInputs()
       .then((mediaDevices: MediaDeviceInfo[]) => {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
@@ -208,10 +231,10 @@ this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.n
   } // Fin función RealizarMarcaje
 
   FuncionMarcarEntrada(){
-
+alert("empenando en funcion marcar...")
     if(this.primerTurno){
-
-this._crudService.getTrabajadores().subscribe(data => {
+alert("realizar marcaje no primero");
+this._crudService.getTrabajadores(this.rut).subscribe(data => {
    console.log(data[0])   
  this.RealizarMarcaje(15, 'salida' ,data[0].nombre, data[0].apellido,  data[0].rut);
 
@@ -219,14 +242,16 @@ this._crudService.getTrabajadores().subscribe(data => {
       });
 
     }else{
-
+alert("realizar marcaje no primero");
           this.RealizarMarcaje(this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.nombreTrabajador, this.apellidoTrabajador,  this.rutTrabajador);
 
     }
 
 
     if(this.currentMov == 'salida')
-      this.currentMov == 'listo'
+      this.currentMov == 'listo';
+
+    alert(this.currentMov);
   } // Fin función FuncionMarcarEntrada
 
 }

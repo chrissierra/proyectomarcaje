@@ -138,11 +138,13 @@ minutosTranscurridas(t) {
     return y;
 }
 
-getTrabajadores(){
-   return  this.afs.collection<Trabajador>('trabajadores').valueChanges();
+getTrabajadores(rut){
+   return  this.afs.collection<Trabajador>('trabajadores', ref => ref.where('rut', '==', rut)).valueChanges();
 }
 
-
+getTrabajadoresTodos(){
+   return  this.afs.collection<Trabajador>('trabajadores').valueChanges();
+}
 
 getMovimientos(){
   return this.afs.collection<Movimientos>('movimientos' ).valueChanges();

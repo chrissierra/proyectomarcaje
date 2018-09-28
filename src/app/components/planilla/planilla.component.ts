@@ -21,7 +21,7 @@ rut:any;
 
  this.rut = this.param.snapshot.paramMap.get('rut');
                 
-			this._crudService.getTrabajadores().subscribe(data => {
+			this._crudService.getTrabajadoresTodos().subscribe(data => {
 			
 			console.log('data', data);
 			

@@ -29,23 +29,40 @@
 <mat-horizontal-stepper [linear]="true" #stepper>
   <mat-step [stepControl]="firstFormGroup">
    
+         
+<div class="jumbotron">
+  <h1 class="display-4">¡RECUERDA!</h1>
+  <p class="lead">Debes marcar solo tus turnos, escribir tu rut y no el de un compañero; el marcaje es personal. Debes realizar la entrada y salida cumpliendo con lo designado por tu jefatura. Todo lo que hagas con éste formulario se puede usar en tu favor para respaldar íntegramente tu cumplimiento de jornada. </p>
+  <hr class="my-4">
+           <div class="row justify-content-center">
+                   <form [formGroup]="firstFormGroup">
+                      <ng-template matStepLabel>Ingresa tu rut</ng-template>
 
-   <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Ingresa tu rut</ng-template>
+
+                <!--<pre><code>{{ meta | async }}</code></pre>
+                <img [src]=" meta | async">-->
 
 
-<!--<pre><code>{{ meta | async }}</code></pre>
-<img [src]=" meta | async">-->
+                      <mat-form-field>
+                        <input (input)="GuardarFotos()" matInput placeholder="RUT" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                      <div>
+                        <button (click)="BuscarRutMovimientosAsociados()" mat-raised-button color="warn" matStepperNext>Siguiente</button>
+                      </div>
+                    </form>
+            </div>
+  <p class="lead">
+   <!-- <a class="btn btn-primary btn-lg" [routerLink]="['']" role="button">Volver</a>-->
+  </p>
+</div>
 
 
-      <mat-form-field>
-        <input (input)="GuardarFotos()" matInput placeholder="RUT" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button (click)="BuscarRutMovimientosAsociados()" mat-button matStepperNext>Siguiente</button>
-      </div>
-    </form>
-  
+
+
+
+
+
+
   </mat-step>
 
 
@@ -60,8 +77,8 @@
  <ng-template matStepLabel>Marca Movimiento</ng-template>
       
 
-
-
+{{ long }}
+{{ lat }}
 
 <div class="card" >
  <agm-map style="height:300px;" [latitude]="lat" [longitude]="long"  zoomControl="true">
@@ -123,8 +140,8 @@
 -->
 
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Volver</button>
+        <!--<button mat-button matStepperNext>Siguiente</button>-->
       </div>
     
   </mat-step>

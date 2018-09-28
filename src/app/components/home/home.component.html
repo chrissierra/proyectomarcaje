@@ -4,33 +4,33 @@
   <div class="form-group">
     <label>Nombre</label>
     <input [(ngModel)]="nombre" name="cualquiera1" type="text" class="form-control">
-    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small class="form-text text-muted">Ingresa nombre de trabajador.</small>
   </div>
 
   <div class="form-group">
     <label>Apellido</label>
     <input [(ngModel)]="apellido" name="cualquiera2" type="text" class="form-control">
-    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small class="form-text text-muted">Sólo el primer apellido.</small>
   </div>
 
     <div class="form-group">
     <label>rut</label>
     <input [(ngModel)]="rut" name="cualquiera3" type="text" class="form-control">
-    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small class="form-text text-muted">Escribe rut sin guion, incluyendo dígito. (9.123.123-k : 9123123k)</small>
   </div>
 
 
    <div class="form-group">
     <label>Cargo</label>
     <input [(ngModel)]="cargo" name="cualquiera3" type="text" class="form-control">
-    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small class="form-text text-muted">Función o puesto trabajador</small>
   </div>
 
-  <div class="form-group form-check">
+  <!--<div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
+  </div>-->
 
-  <button (click)="IngresarTrabajador()" class="btn btn-primary">Submit</button>
+  <button (click)="IngresarTrabajador()" class="btn btn-primary">Guardar</button>
 
 </div>

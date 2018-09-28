@@ -9,14 +9,14 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { map } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-visualizarturnos',
   templateUrl: './visualizarturnos.component.html'
 })
 export class VisualizarturnosComponent implements OnInit {
 //public imagenes: Observable<any>; 
-
+public calendario:any;
 public imagenes:any;
 public lat: any;
 public long:any;
@@ -29,23 +29,9 @@ movimientos: any[] = [];
               private storage: AngularFireStorage) { 
 
 
-	this._crudService.getMovimientos().subscribe(data => {
-			
-			console.log('data', data);
-			
+	
 
-			for (var i = 0; i < data.length; ++i) {
-				console.log(data[i].nombre);
-				if(this._crudService.diasTranscurridas(new Date().getTime()) == this._crudService.diasTranscurridas(data[i].fecha)){
-						this.movimientos.push(data[i])
-				}
-			}
-			
-		
-
-			});
-
-
+this.FuncionActualizarTabla(this._crudService.diasTranscurridas(new Date().getTime()));
 
 
 
@@ -56,6 +42,11 @@ movimientos: any[] = [];
 
 
 visualizarImagenes(fecha, rut){
+
+  
+
+
+
 let minutos= this._crudService.minutosTranscurridas(fecha);
 console.log(minutos)
 
@@ -77,6 +68,36 @@ console.log(data[i]['url']);
   VisualizandoMapa(lat, long){
   	this.lat = lat;
   	this.long=long;
+  } // FIn función VisualizandoMapa
+
+
+  FuncionActualizarTabla(fec){
+this.movimientos = [];
+    this._crudService.getMovimientos().subscribe(data => {
+      
+      console.log('data', data);
+      
+
+      for (var i = 0; i < data.length; ++i) {
+        console.log(data[i].nombre);
+        if(fec == this._crudService.diasTranscurridas(data[i].fecha)){
+            this.movimientos.push(data[i])
+        }
+      }
+      
+    
+
+      });
+  }
+
+  ActualizarFecha(){
+    
+    const FORMATO_ENTRADA = 'MM-DD-YYYY';
+    const FORMATO_SALIDA = 'MM-DD-YYYY';
+    const fecha1 = moment(this.calendario,FORMATO_ENTRADA);
+    const diasTranscurridosDataPicker = this._crudService.diasTranscurridas(new Date(fecha1.format(FORMATO_SALIDA)).getTime()) + 1;
+
+    this.FuncionActualizarTabla(diasTranscurridosDataPicker);
   }
 
 }

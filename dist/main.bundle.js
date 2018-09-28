@@ -1,5 +1,274 @@
 webpackJsonp(["main"],{
 
+/***/ "./node_modules/moment/locale recursive ^\\.\\/.*$":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
@@ -684,7 +953,7 @@ var IngresoSucursalComponent = /** @class */ (function () {
 /***/ "./src/app/components/dashboard/perfil-empleador/perfil-empleador.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav nav-tabs\">\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link active\" href=\"#\">Perfil</a>\r\n    </li>\r\n    <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Opciones</a>\r\n        <div class=\"dropdown-menu\">\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./IngresoSucursal']\">Ingresar Sucusal</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./Reportes']\">Visualizar Reportes</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./SueldosComponent']\">Sueldos</a>\r\n            <!--<a class=\"dropdown-item\" [routerLink]=\"['./PerfilTrabajador']\">Something else here</a> -->\r\n            <div class=\"dropdown-divider\"></div>\r\n            <a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        </div>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Link</a>\r\n    </li>\r\n\r\n</ul>\r\n\r\n\r\n<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n<!--<button mat-raised-button (click)=\"isLinear = !isLinear\" id=\"toggle-linear\">\r\n  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}\r\n</button>-->\r\n<mat-horizontal-stepper [linear]=\"true\" #stepper>\r\n  <mat-step [stepControl]=\"firstFormGroup\">\r\n   \r\n\r\n   <form [formGroup]=\"firstFormGroup\">\r\n      <ng-template matStepLabel>Ingresa tu rut</ng-template>\r\n\r\n\r\n<!--<pre><code>{{ meta | async }}</code></pre>\r\n<img [src]=\" meta | async\">-->\r\n\r\n\r\n      <mat-form-field>\r\n        <input (input)=\"GuardarFotos()\" matInput placeholder=\"RUT\" formControlName=\"firstCtrl\" required>\r\n      </mat-form-field>\r\n      <div>\r\n        <button (click)=\"BuscarRutMovimientosAsociados()\" mat-button matStepperNext>Siguiente</button>\r\n      </div>\r\n    </form>\r\n  \r\n  </mat-step>\r\n\r\n\r\n\r\n\r\n\r\n  <!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON SEGUNDO PASO: -->\r\n\r\n  <mat-step [stepControl]=\"secondFormGroup\">\r\n <ng-template matStepLabel>Marca Movimiento</ng-template>\r\n      \r\n\r\n\r\n\r\n\r\n<div class=\"card\" >\r\n <agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n  <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n</agm-map>\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Marca Movimiento</h5>\r\n\r\n    <p *ngIf=\"currentMov != 'listo'\" class=\"card-text\">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.    </p>  \r\n\r\n     <p *ngIf=\"currentMov == 'listo'\" class=\"card-text\">Los turnos de hoy han sido realizados .    </p>  \r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'entrada' \" type=\"button\" class=\"btn btn-outline-primary\">Marca Entrada</button>\r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'salida' \"  type=\"button\" class=\"btn btn-outline-primary\">Marca Salida</button>\r\n\r\n  </div>\r\n</div>\r\n \r\n\r\n\r\n\r\n     <!-- <div class=\"container\">\r\n        <div style=\"text-align:center\">\r\n\r\n<li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n          <li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n  <h1>\r\n    Ngx-Webcam Demo\r\n  </h1>\r\n\r\n  <div> -->\r\n    <webcam [height]=\"0\" [width]=\"0\" [trigger]=\"triggerObservable\" (imageCapture)=\"handleImage($event)\" *ngIf=\"showWebcam\"\r\n            [allowCameraSwitch]=\"allowCameraSwitch\" [switchCamera]=\"nextWebcamObservable\"\r\n            [videoOptions]=\"videoOptions\"\r\n            (cameraSwitched)=\"cameraWasSwitched($event)\"\r\n            (initError)=\"handleInitError($event)\"\r\n    ></webcam><!--\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"triggerSnapshot();\">Take A Snapshot</button>\r\n    <button class=\"actionBtn\" (click)=\"toggleWebcam();\">Toggle Webcam</button>\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"showNextWebcam(true);\" [disabled]=\"!multipleWebcamsAvailable\">Next Webcam</button>\r\n    <input id=\"cameraSwitchCheckbox\" type=\"checkbox\" [(ngModel)]=\"allowCameraSwitch\"><label for=\"cameraSwitchCheckbox\">Allow Camera Switch</label>\r\n    <br/>\r\n    DeviceId: <input id=\"deviceId\" type=\"text\" [(ngModel)]=\"deviceId\" style=\"width: 500px\">\r\n    <button (click)=\"showNextWebcam(deviceId);\">Activate</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"snapshot\" *ngIf=\"webcamImage\">\r\n  <h2>Nice one!</h2>\r\n  <img [src]=\"webcamImage.imageAsDataUrl\"/>\r\n</div>\r\n\r\n<h4 *ngIf=\"errors.length > 0\">Messages:</h4>\r\n<ul *ngFor=\"let error of errors\">\r\n  <li>{{error | json}}</li>\r\n</ul>\r\n      </div>\r\n-->\r\n\r\n      <div>\r\n        <button mat-button matStepperPrevious>Back</button>\r\n        <button mat-button matStepperNext>Next</button>\r\n      </div>\r\n    \r\n  </mat-step>\r\n\r\n<!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON TERCER PASO: -->\r\n\r\n  <mat-step>\r\n    <ng-template matStepLabel>Listo!</ng-template>\r\n    Proceso realizado.\r\n    <div>\r\n      <button mat-button matStepperPrevious>Back</button>\r\n      <button mat-button (click)=\"stepper.reset()\">Reset</button>\r\n    </div>\r\n  </mat-step>\r\n</mat-horizontal-stepper>\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<ul class=\"nav nav-tabs\">\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link active\" href=\"#\">Perfil</a>\r\n    </li>\r\n    <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Opciones</a>\r\n        <div class=\"dropdown-menu\">\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./IngresoSucursal']\">Ingresar Sucusal</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./Reportes']\">Visualizar Reportes</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./SueldosComponent']\">Sueldos</a>\r\n            <!--<a class=\"dropdown-item\" [routerLink]=\"['./PerfilTrabajador']\">Something else here</a> -->\r\n            <div class=\"dropdown-divider\"></div>\r\n            <a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        </div>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Link</a>\r\n    </li>\r\n\r\n</ul>\r\n\r\n\r\n<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n<!--<button mat-raised-button (click)=\"isLinear = !isLinear\" id=\"toggle-linear\">\r\n  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}\r\n</button>-->\r\n<mat-horizontal-stepper [linear]=\"true\" #stepper>\r\n  <mat-step [stepControl]=\"firstFormGroup\">\r\n   \r\n         \r\n<div class=\"jumbotron\">\r\n  <h1 class=\"display-4\">¡RECUERDA!</h1>\r\n  <p class=\"lead\">Debes marcar solo tus turnos, escribir tu rut y no el de un compañero; el marcaje es personal. Debes realizar la entrada y salida cumpliendo con lo designado por tu jefatura. Todo lo que hagas con éste formulario se puede usar en tu favor para respaldar íntegramente tu cumplimiento de jornada. </p>\r\n  <hr class=\"my-4\">\r\n           <div class=\"row justify-content-center\">\r\n                   <form [formGroup]=\"firstFormGroup\">\r\n                      <ng-template matStepLabel>Ingresa tu rut</ng-template>\r\n\r\n\r\n                <!--<pre><code>{{ meta | async }}</code></pre>\r\n                <img [src]=\" meta | async\">-->\r\n\r\n\r\n                      <mat-form-field>\r\n                        <input (input)=\"GuardarFotos()\" matInput placeholder=\"RUT\" formControlName=\"firstCtrl\" required>\r\n                      </mat-form-field>\r\n                      <div>\r\n                        <button (click)=\"BuscarRutMovimientosAsociados()\" mat-raised-button color=\"warn\" matStepperNext>Siguiente</button>\r\n                      </div>\r\n                    </form>\r\n            </div>\r\n  <p class=\"lead\">\r\n   <!-- <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['']\" role=\"button\">Volver</a>-->\r\n  </p>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n  </mat-step>\r\n\r\n\r\n\r\n\r\n\r\n  <!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON SEGUNDO PASO: -->\r\n\r\n  <mat-step [stepControl]=\"secondFormGroup\">\r\n <ng-template matStepLabel>Marca Movimiento</ng-template>\r\n      \r\n\r\n{{ long }}\r\n{{ lat }}\r\n\r\n<div class=\"card\" >\r\n <agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n  <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n</agm-map>\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Marca Movimiento</h5>\r\n\r\n    <p *ngIf=\"currentMov != 'listo'\" class=\"card-text\">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.    </p>  \r\n\r\n     <p *ngIf=\"currentMov == 'listo'\" class=\"card-text\">Los turnos de hoy han sido realizados .    </p>  \r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'entrada' \" type=\"button\" class=\"btn btn-outline-primary\">Marca Entrada</button>\r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'salida' \"  type=\"button\" class=\"btn btn-outline-primary\">Marca Salida</button>\r\n\r\n  </div>\r\n</div>\r\n \r\n\r\n\r\n\r\n     <!-- <div class=\"container\">\r\n        <div style=\"text-align:center\">\r\n\r\n<li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n          <li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n  <h1>\r\n    Ngx-Webcam Demo\r\n  </h1>\r\n\r\n  <div> -->\r\n    <webcam [height]=\"0\" [width]=\"0\" [trigger]=\"triggerObservable\" (imageCapture)=\"handleImage($event)\" *ngIf=\"showWebcam\"\r\n            [allowCameraSwitch]=\"allowCameraSwitch\" [switchCamera]=\"nextWebcamObservable\"\r\n            [videoOptions]=\"videoOptions\"\r\n            (cameraSwitched)=\"cameraWasSwitched($event)\"\r\n            (initError)=\"handleInitError($event)\"\r\n    ></webcam><!--\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"triggerSnapshot();\">Take A Snapshot</button>\r\n    <button class=\"actionBtn\" (click)=\"toggleWebcam();\">Toggle Webcam</button>\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"showNextWebcam(true);\" [disabled]=\"!multipleWebcamsAvailable\">Next Webcam</button>\r\n    <input id=\"cameraSwitchCheckbox\" type=\"checkbox\" [(ngModel)]=\"allowCameraSwitch\"><label for=\"cameraSwitchCheckbox\">Allow Camera Switch</label>\r\n    <br/>\r\n    DeviceId: <input id=\"deviceId\" type=\"text\" [(ngModel)]=\"deviceId\" style=\"width: 500px\">\r\n    <button (click)=\"showNextWebcam(deviceId);\">Activate</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"snapshot\" *ngIf=\"webcamImage\">\r\n  <h2>Nice one!</h2>\r\n  <img [src]=\"webcamImage.imageAsDataUrl\"/>\r\n</div>\r\n\r\n<h4 *ngIf=\"errors.length > 0\">Messages:</h4>\r\n<ul *ngFor=\"let error of errors\">\r\n  <li>{{error | json}}</li>\r\n</ul>\r\n      </div>\r\n-->\r\n\r\n      <div>\r\n        <button mat-button matStepperPrevious>Volver</button>\r\n        <!--<button mat-button matStepperNext>Siguiente</button>-->\r\n      </div>\r\n    \r\n  </mat-step>\r\n\r\n<!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON TERCER PASO: -->\r\n\r\n  <mat-step>\r\n    <ng-template matStepLabel>Listo!</ng-template>\r\n    Proceso realizado.\r\n    <div>\r\n      <button mat-button matStepperPrevious>Back</button>\r\n      <button mat-button (click)=\"stepper.reset()\">Reset</button>\r\n    </div>\r\n  </mat-step>\r\n</mat-horizontal-stepper>\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -744,16 +1013,36 @@ var PerfilEmpleadorComponent = /** @class */ (function () {
         this.firstFormGroup = this._formBuilder.group({
             firstCtrl: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["l" /* Validators */].required]
         });
-        var ref = this.storage.ref('179614936');
-        this.meta = ref.getDownloadURL();
-        console.log(this.meta);
-        navigator.geolocation.getCurrentPosition(function (pos) {
-            _this.long = +pos.coords.longitude;
-            _this.lat = +pos.coords.latitude;
-        });
+        /*
+           const ref = this.storage.ref('179614936');
+             this.meta = ref.getDownloadURL();
+             console.log( this.meta)
+        */
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                alert(" funciona geo");
+                _this.long = +pos.coords.longitude;
+                _this.lat = +pos.coords.latitude;
+                alert(_this.long + " /  " + _this.lat);
+            });
+        }
+        else {
+            alert("no funciona geo");
+        }
     } // Fin constructor
     PerfilEmpleadorComponent.prototype.ngOnInit = function () {
         var _this = this;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                alert(" funciona geo");
+                _this.long = +pos.coords.longitude;
+                _this.lat = +pos.coords.latitude;
+                alert(_this.long + " /  " + _this.lat);
+            });
+        }
+        else {
+            alert("no funciona geo");
+        }
         __WEBPACK_IMPORTED_MODULE_2_ngx_webcam__["b" /* WebcamUtil */].getAvailableVideoInputs()
             .then(function (mediaDevices) {
             _this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
@@ -865,17 +1154,21 @@ var PerfilEmpleadorComponent = /** @class */ (function () {
     }; // Fin función RealizarMarcaje
     PerfilEmpleadorComponent.prototype.FuncionMarcarEntrada = function () {
         var _this = this;
+        alert("empenando en funcion marcar...");
         if (this.primerTurno) {
-            this._crudService.getTrabajadores().subscribe(function (data) {
+            alert("realizar marcaje no primero");
+            this._crudService.getTrabajadores(this.rut).subscribe(function (data) {
                 console.log(data[0]);
                 _this.RealizarMarcaje(15, 'salida', data[0].nombre, data[0].apellido, data[0].rut);
             });
         }
         else {
+            alert("realizar marcaje no primero");
             this.RealizarMarcaje(this.diferenciaUltimoRegistro, this.UltimoMovimiento, this.nombreTrabajador, this.apellidoTrabajador, this.rutTrabajador);
         }
         if (this.currentMov == 'salida')
             this.currentMov == 'listo';
+        alert(this.currentMov);
     }; // Fin función FuncionMarcarEntrada
     PerfilEmpleadorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -982,7 +1275,7 @@ var SueldosComponent = /** @class */ (function () {
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n<div class=\" container\" style=\"margin-top:30px;padding:50px\">\r\n\r\n  <div class=\"form-group\">\r\n    <label>Nombre</label>\r\n    <input [(ngModel)]=\"nombre\" name=\"cualquiera1\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label>Apellido</label>\r\n    <input [(ngModel)]=\"apellido\" name=\"cualquiera2\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n\r\n    <div class=\"form-group\">\r\n    <label>rut</label>\r\n    <input [(ngModel)]=\"rut\" name=\"cualquiera3\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n\r\n\r\n   <div class=\"form-group\">\r\n    <label>Cargo</label>\r\n    <input [(ngModel)]=\"cargo\" name=\"cualquiera3\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n\r\n  <div class=\"form-group form-check\">\r\n    <input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">\r\n    <label class=\"form-check-label\" for=\"exampleCheck1\">Check me out</label>\r\n  </div>\r\n\r\n  <button (click)=\"IngresarTrabajador()\" class=\"btn btn-primary\">Submit</button>\r\n\r\n</div>"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\" container\" style=\"margin-top:30px;padding:50px\">\r\n\r\n  <div class=\"form-group\">\r\n    <label>Nombre</label>\r\n    <input [(ngModel)]=\"nombre\" name=\"cualquiera1\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">Ingresa nombre de trabajador.</small>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label>Apellido</label>\r\n    <input [(ngModel)]=\"apellido\" name=\"cualquiera2\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">Sólo el primer apellido.</small>\r\n  </div>\r\n\r\n    <div class=\"form-group\">\r\n    <label>rut</label>\r\n    <input [(ngModel)]=\"rut\" name=\"cualquiera3\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">Escribe rut sin guion, incluyendo dígito. (9.123.123-k : 9123123k)</small>\r\n  </div>\r\n\r\n\r\n   <div class=\"form-group\">\r\n    <label>Cargo</label>\r\n    <input [(ngModel)]=\"cargo\" name=\"cualquiera3\" type=\"text\" class=\"form-control\">\r\n    <small class=\"form-text text-muted\">Función o puesto trabajador</small>\r\n  </div>\r\n\r\n  <!--<div class=\"form-group form-check\">\r\n    <input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">\r\n    <label class=\"form-check-label\" for=\"exampleCheck1\">Check me out</label>\r\n  </div>-->\r\n\r\n  <button (click)=\"IngresarTrabajador()\" class=\"btn btn-primary\">Guardar</button>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -994,6 +1287,7 @@ module.exports = "<app-navbar></app-navbar>\r\n<div class=\" container\" style=\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_crud_service__ = __webpack_require__("./src/app/services/crud.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_fire_firestore__ = __webpack_require__("./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1006,9 +1300,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(_crudService, db) {
+    function HomeComponent(_crudService, db, param, router) {
         this._crudService = _crudService;
+        this.param = param;
+        this.router = router;
         this.rut_empresa = localStorage.getItem('rut_empresa');
         this.nombre_empresa = localStorage.getItem('nombre_empresa');
         this.nombre_rep = localStorage.getItem('nombre_rep');
@@ -1024,16 +1321,29 @@ var HomeComponent = /** @class */ (function () {
         this._crudService.agregarMensajes();
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                alert(" funciona geo");
+                _this.long = +pos.coords.longitude;
+                _this.lat = +pos.coords.latitude;
+                alert(_this.long + " /  " + _this.lat);
+            });
+        }
+        else {
+            alert("no funciona geo");
+        }
     };
     HomeComponent.prototype.IngresarTrabajador = function () {
         this._crudService.ingresarTrabajador(this.nombre, this.apellido, this.rut, this.cargo);
+        this.router.navigate(['./']);
     }; // Fin función IngresarTrabajador
     HomeComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-home',
             template: __webpack_require__("./src/app/components/home/home.component.html")
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_crud_service__["a" /* CrudService */], __WEBPACK_IMPORTED_MODULE_2__angular_fire_firestore__["a" /* AngularFirestore */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_crud_service__["a" /* CrudService */], __WEBPACK_IMPORTED_MODULE_2__angular_fire_firestore__["a" /* AngularFirestore */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -1866,7 +2176,7 @@ var LibroAsistenciaComponent = /** @class */ (function () {
 /***/ "./src/app/components/libro-asistencia/visualizarturnos/visualizarturnos.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n    <div class=\"input-group mb-3\">\r\n       <mat-form-field>\r\n  <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\r\n  <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n  <mat-datepicker #picker></mat-datepicker>\r\n</mat-form-field>\r\n    </div>\r\n\r\n    <!-- <div class=\"input-group mb-3 row justify-content-center\"><button type=\"button\" class=\"btn btn-outline-primary\">Buscar</button></div>\r\n     <p>Value: {{ name }}</p> <p>Valid: {{ ctrl.dirty }}</p>\r\n   -->\r\n\r\n    <table class=\"table table-hover table-responsive-lg table-dark\">\r\n        <thead>\r\n            <tr>\r\n                <th scope=\"col\">Nombre</th>\r\n                <th scope=\"col\">Apellido</th>\r\n                <th scope=\"col\">Cargo</th>\r\n                <th scope=\"col\">Rut</th>\r\n                <th scope=\"col\">Ubicación</th>\r\n                <th scope=\"col\">Imagenes</th>\r\n            </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n\r\n            <tr *ngFor=\"let movimientos of movimientos\">\r\n\r\n                <th [routerLink]=\"['/DashBoard', movimientos.rut]\" scope=\"row\" style=\"cursor:pointer\">{{ movimientos.nombre }}</th>\r\n                <td>{{ movimientos.apellido }}</td>\r\n                <td>{{ movimientos.cargo }}</td>\r\n                <td>{{ movimientos.rut }}</td>\r\n                 <td><button (click)=\"VisualizandoMapa(movimientos.locacion.lat, movimientos.locacion.long)\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n \t\t\t\t\t\t\t Visualizar mapa\r\n\t\t\t\t\t\t\t</button></td>\r\n\r\n\r\n\t\t\t\t <td><button (click)=\"visualizarImagenes(movimientos.fecha, movimientos.rut)\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal1\">\r\n \t\t\t\t\t\t\t Visualizar mapa\r\n\t\t\t\t\t\t\t</button></td>\t\t\t\r\n\r\n            </tr>\r\n\r\n        </tbody>\r\n\r\n        \r\n    </table>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Mapa</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        \t<agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n \t\t\t\t <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n\t\t\t</agm-map>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-lg\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Mapa</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <h2>imagenes</h2>\r\n        <li *ngFor=\"let imagenes of imagenes ; let i =index\" >\r\n        \t\r\n        \t<img  [src]=\"imagArray[i] | async\">\r\n        </li>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n  <div class=\"row justify-content-center\">\r\n        <form class=\"form-inline\">\r\n          <div class=\"form-group mb-2\">\r\n            <label for=\"staticEmail2\" class=\"sr-only\">Email</label>\r\n                  <mat-form-field>\r\n                    <input [(ngModel)]=\"calendario\" name=\"calendario\" matInput [matDatepicker]=\"picker\" placeholder=\"Selecciona una fecha\">\r\n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #picker></mat-datepicker>\r\n                  </mat-form-field>\r\n          </div>\r\n\r\n        <div class=\"form-group mx-sm-3 mb-2\">\r\n            \r\n          </div>\r\n           <button (click)=\"ActualizarFecha()\" mat-raised-button color=\"primary\">Ir </button>\r\n        </form>\r\n</div>\r\n    <!-- <div class=\"input-group mb-3 row justify-content-center\"><button type=\"button\" class=\"btn btn-outline-primary\">Buscar</button></div>\r\n     <p>Value: {{ name }}</p> <p>Valid: {{ ctrl.dirty }}</p>\r\n   -->\r\n\r\n    <table class=\"table table-hover table-responsive-lg table-dark\">\r\n        <thead>\r\n            <tr>\r\n                <th scope=\"col\">Nombre</th>\r\n                <th scope=\"col\">Apellido</th>\r\n                <th scope=\"col\">Movimiento</th>\r\n                <th scope=\"col\">Rut</th>\r\n                <th scope=\"col\">Ubicación</th>\r\n                <th scope=\"col\">Imagenes</th>\r\n            </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n\r\n            <tr *ngFor=\"let movimientos of movimientos\">\r\n\r\n                <th [routerLink]=\"['/DashBoard', movimientos.rut]\" scope=\"row\" style=\"cursor:pointer\">{{ movimientos.nombre }}</th>\r\n                <td>{{ movimientos.apellido }}</td>\r\n                <td>{{ movimientos.movimiento | titlecase }}</td>\r\n                <td>{{ movimientos.rut }}</td>\r\n                 <td><button (click)=\"VisualizandoMapa(movimientos.locacion.lat, movimientos.locacion.long)\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n \t\t\t\t\t\t\t Visualizar mapa\r\n\t\t\t\t\t\t\t</button></td>\r\n\r\n\r\n\t\t\t\t <td><button (click)=\"visualizarImagenes(movimientos.fecha, movimientos.rut)\" type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#exampleModal1\">\r\n \t\t\t\t\t\t\t Imagenes Registro\r\n\t\t\t\t\t\t\t</button></td>\t\t\t\r\n\r\n            </tr>\r\n\r\n        </tbody>\r\n\r\n        \r\n    </table>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-lg\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Mapa</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        \t<agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n \t\t\t\t <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n\t\t\t</agm-map>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-lg\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Mapa</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n       \r\n        <li *ngFor=\"let imagenes of imagenes ; let i =index\" >\r\n        \t\r\n        \t<img style=\"width:70%\" [src]=\"imagArray[i] | async\">\r\n        </li>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1881,6 +2191,8 @@ module.exports = "<div class=\"container\" style=\"margin-top:50px;padding:35px;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_fire_firestore__ = __webpack_require__("./node_modules/@angular/fire/firestore/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_fire_storage__ = __webpack_require__("./node_modules/@angular/fire/storage/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__("./node_modules/moment/moment.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1896,9 +2208,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var VisualizarturnosComponent = /** @class */ (function () {
     function VisualizarturnosComponent(param, _formBuilder, _crudService, db, storage) {
-        var _this = this;
         this.param = param;
         this._formBuilder = _formBuilder;
         this._crudService = _crudService;
@@ -1906,15 +2218,7 @@ var VisualizarturnosComponent = /** @class */ (function () {
         this.storage = storage;
         this.imagArray = [];
         this.movimientos = [];
-        this._crudService.getMovimientos().subscribe(function (data) {
-            console.log('data', data);
-            for (var i = 0; i < data.length; ++i) {
-                console.log(data[i].nombre);
-                if (_this._crudService.diasTranscurridas(new Date().getTime()) == _this._crudService.diasTranscurridas(data[i].fecha)) {
-                    _this.movimientos.push(data[i]);
-                }
-            }
-        });
+        this.FuncionActualizarTabla(this._crudService.diasTranscurridas(new Date().getTime()));
     }
     VisualizarturnosComponent.prototype.ngOnInit = function () {
     };
@@ -1934,6 +2238,26 @@ var VisualizarturnosComponent = /** @class */ (function () {
     VisualizarturnosComponent.prototype.VisualizandoMapa = function (lat, long) {
         this.lat = lat;
         this.long = long;
+    }; // FIn función VisualizandoMapa
+    VisualizarturnosComponent.prototype.FuncionActualizarTabla = function (fec) {
+        var _this = this;
+        this.movimientos = [];
+        this._crudService.getMovimientos().subscribe(function (data) {
+            console.log('data', data);
+            for (var i = 0; i < data.length; ++i) {
+                console.log(data[i].nombre);
+                if (fec == _this._crudService.diasTranscurridas(data[i].fecha)) {
+                    _this.movimientos.push(data[i]);
+                }
+            }
+        });
+    };
+    VisualizarturnosComponent.prototype.ActualizarFecha = function () {
+        var FORMATO_ENTRADA = 'MM-DD-YYYY';
+        var FORMATO_SALIDA = 'MM-DD-YYYY';
+        var fecha1 = __WEBPACK_IMPORTED_MODULE_6_moment__(this.calendario, FORMATO_ENTRADA);
+        var diasTranscurridosDataPicker = this._crudService.diasTranscurridas(new Date(fecha1.format(FORMATO_SALIDA)).getTime()) + 1;
+        this.FuncionActualizarTabla(diasTranscurridosDataPicker);
     };
     VisualizarturnosComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -3073,7 +3397,7 @@ var PlanillaComponent = /** @class */ (function () {
         this.param = param;
         this._crudService = _crudService;
         this.rut = this.param.snapshot.paramMap.get('rut');
-        this._crudService.getTrabajadores().subscribe(function (data) {
+        this._crudService.getTrabajadoresTodos().subscribe(function (data) {
             console.log('data', data);
             _this.empleados = data;
         });
@@ -3098,7 +3422,7 @@ var PlanillaComponent = /** @class */ (function () {
 /***/ "./src/app/components/shared/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-dark bg-dark\">\r\n    <a class=\"navbar-brand\" [routerLink]=\"['/Home']\">SISTER </a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"active\" [routerLink]=\"['/Home']\">Inicio </a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"active\" [routerLink]=\"['/DashBoard']\">Dashboard</a>\r\n            </li>\r\n\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"active\" [routerLink]=\"['/LibroAsistencia']\">Libro Asistencia</a>\r\n            </li>\r\n            <li class=\"nav-item dropdown\">\r\n                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          Acciones\r\n        </a>\r\n                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n                    <a class=\"dropdown-item\" routerLinkActive=\"active\" href=\"#\">Pago Remuneraciones</a>\r\n                    <a class=\"dropdown-item\" routerLinkActive=\"active\" [routerLink]=\"['/Ingresa']\">Ingresar trabajador</a>\r\n                    <div class=\"dropdown-divider\"></div>\r\n                    <a class=\"dropdown-item\" routerLinkActive=\"active\" [routerLink]=\"['/Planilla']\">Visualizar planilla</a>\r\n                </div>\r\n            </li>\r\n            <!--    <li class=\"nav-item\">\r\n                <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n            </li>-->\r\n        </ul>\r\n        <form class=\"form-inline my-2 my-lg-0\">\r\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"´Búsqueda\" aria-label=\"Search\">\r\n            <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\">Buscar</button>\r\n        </form>\r\n    </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-dark bg-dark\">\r\n    <a class=\"navbar-brand\" [routerLink]=\"['/Home']\">DANHER  </a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"active\" [routerLink]=\"['/Home']\">Inicio </a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"active\" [routerLink]=\"['/DashBoard']\">Ingresar Trabajador</a>\r\n            </li>\r\n\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"active\" [routerLink]=\"['/LibroAsistencia']\">Libro Asistencia</a>\r\n            </li>\r\n            <li class=\"nav-item dropdown\">\r\n                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          Acciones\r\n        </a>\r\n                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n                 \r\n                    <a class=\"dropdown-item\" routerLinkActive=\"active\" [routerLink]=\"['/Planilla']\">Visualizar planilla</a>\r\n                </div>\r\n            </li>\r\n            <!--    <li class=\"nav-item\">\r\n                <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n            </li>-->\r\n        </ul>\r\n        <form class=\"form-inline my-2 my-lg-0\">\r\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"´Búsqueda\" aria-label=\"Search\">\r\n            <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\">Buscar</button>\r\n        </form>\r\n    </div>\r\n</nav>"
 
 /***/ }),
 
@@ -3354,7 +3678,10 @@ var CrudService = /** @class */ (function () {
         var y = Math.round(t / minutes);
         return y;
     };
-    CrudService.prototype.getTrabajadores = function () {
+    CrudService.prototype.getTrabajadores = function (rut) {
+        return this.afs.collection('trabajadores', function (ref) { return ref.where('rut', '==', rut); }).valueChanges();
+    };
+    CrudService.prototype.getTrabajadoresTodos = function () {
         return this.afs.collection('trabajadores').valueChanges();
     };
     CrudService.prototype.getMovimientos = function () {
