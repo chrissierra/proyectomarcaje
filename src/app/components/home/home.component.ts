@@ -39,15 +39,15 @@ constructor(public _crudService:  CrudService, db: AngularFirestore, private par
   ngOnInit() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition( pos => {
- alert(" funciona geo")
+ //alert(" funciona geo")
 
         this.long = +pos.coords.longitude;
         this.lat = +pos.coords.latitude;
 
-        alert(this.long + " /  " + this.lat)
+        //alert(this.long + " /  " + this.lat)
       });
     } else {
-        alert("no funciona geo")
+        //alert("no funciona geo")
     }
   }
 

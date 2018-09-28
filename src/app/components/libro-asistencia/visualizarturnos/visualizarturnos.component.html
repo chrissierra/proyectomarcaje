@@ -89,16 +89,16 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Mapa</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Respaldo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
        
-        <li *ngFor="let imagenes of imagenes ; let i =index" >
+        <li *ngFor="let imagArray of imagArray ; let i =index" >
         	
-        	<img style="width:70%" [src]="imagArray[i] | async">
+        	<img style="width:70%" [src]="imagArray | async">
         </li>
       </div>
       <div class="modal-footer">

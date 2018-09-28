@@ -10,7 +10,8 @@ import { map } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-perfil-empleador',
-  templateUrl: './perfil-empleador.component.html'
+  templateUrl: './perfil-empleador.component.html',
+  styleUrls: ['./perfil-empleador.css']
 })
 export class PerfilEmpleadorComponent implements OnInit {
       
@@ -67,15 +68,15 @@ export class PerfilEmpleadorComponent implements OnInit {
 */
 if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition( pos => {
- alert(" funciona geo")
+ //alert(" funciona geo")
 
         this.long = +pos.coords.longitude;
         this.lat = +pos.coords.latitude;
 
-        alert(this.long + " /  " + this.lat)
+        //alert(this.long + " /  " + this.lat)
       });
     } else {
-        alert("no funciona geo")
+        //alert("no funciona geo")
     }
 
 
@@ -85,15 +86,15 @@ if (navigator.geolocation) {
   public ngOnInit(): void {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition( pos => {
- alert(" funciona geo")
+ //alert(" funciona geo")
 
         this.long = +pos.coords.longitude;
         this.lat = +pos.coords.latitude;
 
-        alert(this.long + " /  " + this.lat)
+        //alert(this.long + " /  " + this.lat)
       });
     } else {
-        alert("no funciona geo")
+        //alert("no funciona geo")
     }
 
     WebcamUtil.getAvailableVideoInputs()
@@ -231,9 +232,9 @@ this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.n
   } // Fin función RealizarMarcaje
 
   FuncionMarcarEntrada(){
-alert("empenando en funcion marcar...")
+//alert("empenando en funcion marcar...")
     if(this.primerTurno){
-alert("realizar marcaje no primero");
+//alert("realizar marcaje no primero");
 this._crudService.getTrabajadores(this.rut).subscribe(data => {
    console.log(data[0])   
  this.RealizarMarcaje(15, 'salida' ,data[0].nombre, data[0].apellido,  data[0].rut);
@@ -242,7 +243,7 @@ this._crudService.getTrabajadores(this.rut).subscribe(data => {
       });
 
     }else{
-alert("realizar marcaje no primero");
+//alert("realizar marcaje no primero");
           this.RealizarMarcaje(this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.nombreTrabajador, this.apellidoTrabajador,  this.rutTrabajador);
 
     }
@@ -251,7 +252,7 @@ alert("realizar marcaje no primero");
     if(this.currentMov == 'salida')
       this.currentMov == 'listo';
 
-    alert(this.currentMov);
+    //alert(this.currentMov);
   } // Fin función FuncionMarcarEntrada
 
 }

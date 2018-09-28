@@ -41,27 +41,41 @@ this.FuncionActualizarTabla(this._crudService.diasTranscurridas(new Date().getTi
   }
 
 
+
+
+private getURL(minutos, fecha , rut){
+  this.db.collection('urlImagenes', ref => ref.where('rut', '==', rut).where('minuto', '==', minutos)).valueChanges().subscribe(data => {
+
+        this.imagenes= data;
+        
+        for (let i = 0; i < data.length; ++i) {
+
+               this.imagArray.push(this.storage.ref(data[i]['url']).getDownloadURL());
+   
+        }
+        })
+} // Fin función getURL
+
+
 visualizarImagenes(fecha, rut){
-
-  
-
-
-
+this.imagArray = [];
+ 
 let minutos= this._crudService.minutosTranscurridas(fecha);
-console.log(minutos)
+
 
 this.db.collection('urlImagenes', ref => ref.where('rut', '==', rut).where('minuto', '==', minutos)).valueChanges().subscribe(data => {
 console.log(data)
 this.imagenes= data;
 for (let i = 0; i < data.length; ++i) {
-console.log(data[i]['url']);
+
  this.imagArray.push(this.storage.ref(data[i]['url']).getDownloadURL());
    
 }
 })
-
-
-
+this.getURL(minutos + 2 , fecha, rut)
+this.getURL(minutos + 1 , fecha, rut)
+this.getURL(minutos - 1 , fecha, rut)
+this.getURL(minutos - 2 , fecha, rut)
 }
 
 

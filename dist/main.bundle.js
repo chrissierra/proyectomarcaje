@@ -953,7 +953,7 @@ var IngresoSucursalComponent = /** @class */ (function () {
 /***/ "./src/app/components/dashboard/perfil-empleador/perfil-empleador.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav nav-tabs\">\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link active\" href=\"#\">Perfil</a>\r\n    </li>\r\n    <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Opciones</a>\r\n        <div class=\"dropdown-menu\">\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./IngresoSucursal']\">Ingresar Sucusal</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./Reportes']\">Visualizar Reportes</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./SueldosComponent']\">Sueldos</a>\r\n            <!--<a class=\"dropdown-item\" [routerLink]=\"['./PerfilTrabajador']\">Something else here</a> -->\r\n            <div class=\"dropdown-divider\"></div>\r\n            <a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        </div>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Link</a>\r\n    </li>\r\n\r\n</ul>\r\n\r\n\r\n<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n<!--<button mat-raised-button (click)=\"isLinear = !isLinear\" id=\"toggle-linear\">\r\n  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}\r\n</button>-->\r\n<mat-horizontal-stepper [linear]=\"true\" #stepper>\r\n  <mat-step [stepControl]=\"firstFormGroup\">\r\n   \r\n         \r\n<div class=\"jumbotron\">\r\n  <h1 class=\"display-4\">¡RECUERDA!</h1>\r\n  <p class=\"lead\">Debes marcar solo tus turnos, escribir tu rut y no el de un compañero; el marcaje es personal. Debes realizar la entrada y salida cumpliendo con lo designado por tu jefatura. Todo lo que hagas con éste formulario se puede usar en tu favor para respaldar íntegramente tu cumplimiento de jornada. </p>\r\n  <hr class=\"my-4\">\r\n           <div class=\"row justify-content-center\">\r\n                   <form [formGroup]=\"firstFormGroup\">\r\n                      <ng-template matStepLabel>Ingresa tu rut</ng-template>\r\n\r\n\r\n                <!--<pre><code>{{ meta | async }}</code></pre>\r\n                <img [src]=\" meta | async\">-->\r\n\r\n\r\n                      <mat-form-field>\r\n                        <input (input)=\"GuardarFotos()\" matInput placeholder=\"RUT\" formControlName=\"firstCtrl\" required>\r\n                      </mat-form-field>\r\n                      <div>\r\n                        <button (click)=\"BuscarRutMovimientosAsociados()\" mat-raised-button color=\"warn\" matStepperNext>Siguiente</button>\r\n                      </div>\r\n                    </form>\r\n            </div>\r\n  <p class=\"lead\">\r\n   <!-- <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['']\" role=\"button\">Volver</a>-->\r\n  </p>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n  </mat-step>\r\n\r\n\r\n\r\n\r\n\r\n  <!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON SEGUNDO PASO: -->\r\n\r\n  <mat-step [stepControl]=\"secondFormGroup\">\r\n <ng-template matStepLabel>Marca Movimiento</ng-template>\r\n      \r\n\r\n{{ long }}\r\n{{ lat }}\r\n\r\n<div class=\"card\" >\r\n <agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n  <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n</agm-map>\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Marca Movimiento</h5>\r\n\r\n    <p *ngIf=\"currentMov != 'listo'\" class=\"card-text\">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.    </p>  \r\n\r\n     <p *ngIf=\"currentMov == 'listo'\" class=\"card-text\">Los turnos de hoy han sido realizados .    </p>  \r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'entrada' \" type=\"button\" class=\"btn btn-outline-primary\">Marca Entrada</button>\r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'salida' \"  type=\"button\" class=\"btn btn-outline-primary\">Marca Salida</button>\r\n\r\n  </div>\r\n</div>\r\n \r\n\r\n\r\n\r\n     <!-- <div class=\"container\">\r\n        <div style=\"text-align:center\">\r\n\r\n<li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n          <li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n  <h1>\r\n    Ngx-Webcam Demo\r\n  </h1>\r\n\r\n  <div> -->\r\n    <webcam [height]=\"0\" [width]=\"0\" [trigger]=\"triggerObservable\" (imageCapture)=\"handleImage($event)\" *ngIf=\"showWebcam\"\r\n            [allowCameraSwitch]=\"allowCameraSwitch\" [switchCamera]=\"nextWebcamObservable\"\r\n            [videoOptions]=\"videoOptions\"\r\n            (cameraSwitched)=\"cameraWasSwitched($event)\"\r\n            (initError)=\"handleInitError($event)\"\r\n    ></webcam><!--\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"triggerSnapshot();\">Take A Snapshot</button>\r\n    <button class=\"actionBtn\" (click)=\"toggleWebcam();\">Toggle Webcam</button>\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"showNextWebcam(true);\" [disabled]=\"!multipleWebcamsAvailable\">Next Webcam</button>\r\n    <input id=\"cameraSwitchCheckbox\" type=\"checkbox\" [(ngModel)]=\"allowCameraSwitch\"><label for=\"cameraSwitchCheckbox\">Allow Camera Switch</label>\r\n    <br/>\r\n    DeviceId: <input id=\"deviceId\" type=\"text\" [(ngModel)]=\"deviceId\" style=\"width: 500px\">\r\n    <button (click)=\"showNextWebcam(deviceId);\">Activate</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"snapshot\" *ngIf=\"webcamImage\">\r\n  <h2>Nice one!</h2>\r\n  <img [src]=\"webcamImage.imageAsDataUrl\"/>\r\n</div>\r\n\r\n<h4 *ngIf=\"errors.length > 0\">Messages:</h4>\r\n<ul *ngFor=\"let error of errors\">\r\n  <li>{{error | json}}</li>\r\n</ul>\r\n      </div>\r\n-->\r\n\r\n      <div>\r\n        <button mat-button matStepperPrevious>Volver</button>\r\n        <!--<button mat-button matStepperNext>Siguiente</button>-->\r\n      </div>\r\n    \r\n  </mat-step>\r\n\r\n<!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON TERCER PASO: -->\r\n\r\n  <mat-step>\r\n    <ng-template matStepLabel>Listo!</ng-template>\r\n    Proceso realizado.\r\n    <div>\r\n      <button mat-button matStepperPrevious>Back</button>\r\n      <button mat-button (click)=\"stepper.reset()\">Reset</button>\r\n    </div>\r\n  </mat-step>\r\n</mat-horizontal-stepper>\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<ul class=\"nav nav-tabs\">\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link active\" href=\"#\">Perfil</a>\r\n    </li>\r\n    <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Opciones</a>\r\n        <div class=\"dropdown-menu\">\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./IngresoSucursal']\">Ingresar Sucusal</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./Reportes']\">Visualizar Reportes</a>\r\n            <a class=\"dropdown-item\" [routerLink]=\"['./SueldosComponent']\">Sueldos</a>\r\n            <!--<a class=\"dropdown-item\" [routerLink]=\"['./PerfilTrabajador']\">Something else here</a> -->\r\n            <div class=\"dropdown-divider\"></div>\r\n            <a class=\"dropdown-item\" href=\"#\">Separated link</a>\r\n        </div>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Link</a>\r\n    </li>\r\n\r\n</ul>\r\n\r\n\r\n<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n<!--<button mat-raised-button (click)=\"isLinear = !isLinear\" id=\"toggle-linear\">\r\n  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}\r\n</button>-->\r\n<mat-horizontal-stepper [linear]=\"true\" #stepper>\r\n  <mat-step [stepControl]=\"firstFormGroup\">\r\n   \r\n         \r\n<div class=\"jumbotron\">\r\n  <div class=\"row\">\r\n      <div class=\"col\">\r\n        <h1 id=\"LetraEspecial\"  class=\"display-4\">¡RECUERDA!</h1>\r\n      </div>\r\n  </div>\r\n  <p class=\"lead\">Debes marcar solo tus turnos, escribir tu rut y no el de un compañero; el marcaje es personal. Debes realizar la entrada y salida cumpliendo con lo designado por tu jefatura. Todo lo que hagas con éste formulario se puede usar en tu favor para respaldar íntegramente tu cumplimiento de jornada. </p>\r\n  <hr class=\"my-4\">\r\n           <div class=\"row justify-content-center\">\r\n                   <form [formGroup]=\"firstFormGroup\">\r\n                      <ng-template matStepLabel>Ingresa tu rut</ng-template>\r\n\r\n\r\n                <!--<pre><code>{{ meta | async }}</code></pre>\r\n                <img [src]=\" meta | async\">-->\r\n\r\n\r\n                      <mat-form-field>\r\n                        <input (input)=\"GuardarFotos()\" matInput placeholder=\"RUT\" formControlName=\"firstCtrl\" required>\r\n                      </mat-form-field>\r\n                      <div>\r\n                        <button (click)=\"BuscarRutMovimientosAsociados()\" mat-raised-button color=\"warn\" matStepperNext>Siguiente</button>\r\n                      </div>\r\n                    </form>\r\n            </div>\r\n  <p class=\"lead\">\r\n   <!-- <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['']\" role=\"button\">Volver</a>-->\r\n  </p>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n  </mat-step>\r\n\r\n\r\n\r\n\r\n\r\n  <!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON SEGUNDO PASO: -->\r\n\r\n  <mat-step [stepControl]=\"secondFormGroup\">\r\n <ng-template matStepLabel>Marca Movimiento</ng-template>\r\n      \r\n\r\n{{ long }}\r\n{{ lat }}\r\n\r\n<div class=\"card\" >\r\n <agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n  <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n</agm-map>\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Marca Movimiento</h5>\r\n\r\n    <p *ngIf=\"currentMov != 'listo'\" class=\"card-text\">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.    </p>  \r\n\r\n     <p *ngIf=\"currentMov == 'listo'\" class=\"card-text\">Los turnos de hoy han sido realizados .    </p>  \r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'entrada' \" type=\"button\" class=\"btn btn-outline-primary\">Marca Entrada</button>\r\n  <button (click)=\"FuncionMarcarEntrada()\" *ngIf=\"currentMov == 'salida' \"  type=\"button\" class=\"btn btn-outline-primary\">Marca Salida</button>\r\n\r\n  </div>\r\n</div>\r\n \r\n\r\n\r\n\r\n     <!-- <div class=\"container\">\r\n        <div style=\"text-align:center\">\r\n\r\n<li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n          <li *ngFor=\"let item of movimientos  | async\">{{ item.nombre }} </li>\r\n  <h1>\r\n    Ngx-Webcam Demo\r\n  </h1>\r\n\r\n  <div> -->\r\n    <webcam [height]=\"0\" [width]=\"0\" [trigger]=\"triggerObservable\" (imageCapture)=\"handleImage($event)\" *ngIf=\"showWebcam\"\r\n            [allowCameraSwitch]=\"allowCameraSwitch\" [switchCamera]=\"nextWebcamObservable\"\r\n            [videoOptions]=\"videoOptions\"\r\n            (cameraSwitched)=\"cameraWasSwitched($event)\"\r\n            (initError)=\"handleInitError($event)\"\r\n    ></webcam><!--\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"triggerSnapshot();\">Take A Snapshot</button>\r\n    <button class=\"actionBtn\" (click)=\"toggleWebcam();\">Toggle Webcam</button>\r\n    <br/>\r\n    <button class=\"actionBtn\" (click)=\"showNextWebcam(true);\" [disabled]=\"!multipleWebcamsAvailable\">Next Webcam</button>\r\n    <input id=\"cameraSwitchCheckbox\" type=\"checkbox\" [(ngModel)]=\"allowCameraSwitch\"><label for=\"cameraSwitchCheckbox\">Allow Camera Switch</label>\r\n    <br/>\r\n    DeviceId: <input id=\"deviceId\" type=\"text\" [(ngModel)]=\"deviceId\" style=\"width: 500px\">\r\n    <button (click)=\"showNextWebcam(deviceId);\">Activate</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"snapshot\" *ngIf=\"webcamImage\">\r\n  <h2>Nice one!</h2>\r\n  <img [src]=\"webcamImage.imageAsDataUrl\"/>\r\n</div>\r\n\r\n<h4 *ngIf=\"errors.length > 0\">Messages:</h4>\r\n<ul *ngFor=\"let error of errors\">\r\n  <li>{{error | json}}</li>\r\n</ul>\r\n      </div>\r\n-->\r\n\r\n      <div>\r\n        <button mat-button matStepperPrevious>Volver</button>\r\n        <!--<button mat-button matStepperNext>Siguiente</button>-->\r\n      </div>\r\n    \r\n  </mat-step>\r\n\r\n<!-- ********************************************************  -->\r\n\r\n<!-- SIGUE CON TERCER PASO: -->\r\n\r\n  <mat-step>\r\n    <ng-template matStepLabel>Listo!</ng-template>\r\n    Proceso realizado.\r\n    <div>\r\n      <button mat-button matStepperPrevious>Back</button>\r\n      <button mat-button (click)=\"stepper.reset()\">Reset</button>\r\n    </div>\r\n  </mat-step>\r\n</mat-horizontal-stepper>\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -1020,28 +1020,28 @@ var PerfilEmpleadorComponent = /** @class */ (function () {
         */
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (pos) {
-                alert(" funciona geo");
+                //alert(" funciona geo")
                 _this.long = +pos.coords.longitude;
                 _this.lat = +pos.coords.latitude;
-                alert(_this.long + " /  " + _this.lat);
+                //alert(this.long + " /  " + this.lat)
             });
         }
         else {
-            alert("no funciona geo");
+            //alert("no funciona geo")
         }
     } // Fin constructor
     PerfilEmpleadorComponent.prototype.ngOnInit = function () {
         var _this = this;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (pos) {
-                alert(" funciona geo");
+                //alert(" funciona geo")
                 _this.long = +pos.coords.longitude;
                 _this.lat = +pos.coords.latitude;
-                alert(_this.long + " /  " + _this.lat);
+                //alert(this.long + " /  " + this.lat)
             });
         }
         else {
-            alert("no funciona geo");
+            //alert("no funciona geo")
         }
         __WEBPACK_IMPORTED_MODULE_2_ngx_webcam__["b" /* WebcamUtil */].getAvailableVideoInputs()
             .then(function (mediaDevices) {
@@ -1154,26 +1154,27 @@ var PerfilEmpleadorComponent = /** @class */ (function () {
     }; // Fin función RealizarMarcaje
     PerfilEmpleadorComponent.prototype.FuncionMarcarEntrada = function () {
         var _this = this;
-        alert("empenando en funcion marcar...");
+        //alert("empenando en funcion marcar...")
         if (this.primerTurno) {
-            alert("realizar marcaje no primero");
+            //alert("realizar marcaje no primero");
             this._crudService.getTrabajadores(this.rut).subscribe(function (data) {
                 console.log(data[0]);
                 _this.RealizarMarcaje(15, 'salida', data[0].nombre, data[0].apellido, data[0].rut);
             });
         }
         else {
-            alert("realizar marcaje no primero");
+            //alert("realizar marcaje no primero");
             this.RealizarMarcaje(this.diferenciaUltimoRegistro, this.UltimoMovimiento, this.nombreTrabajador, this.apellidoTrabajador, this.rutTrabajador);
         }
         if (this.currentMov == 'salida')
             this.currentMov == 'listo';
-        alert(this.currentMov);
+        //alert(this.currentMov);
     }; // Fin función FuncionMarcarEntrada
     PerfilEmpleadorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-perfil-empleador',
-            template: __webpack_require__("./src/app/components/dashboard/perfil-empleador/perfil-empleador.component.html")
+            template: __webpack_require__("./src/app/components/dashboard/perfil-empleador/perfil-empleador.component.html"),
+            styles: [__webpack_require__("./src/app/components/dashboard/perfil-empleador/perfil-empleador.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormBuilder */],
@@ -1185,6 +1186,13 @@ var PerfilEmpleadorComponent = /** @class */ (function () {
 }());
 
 
+
+/***/ }),
+
+/***/ "./src/app/components/dashboard/perfil-empleador/perfil-empleador.css":
+/***/ (function(module, exports) {
+
+module.exports = "@media only screen and (max-width: 600px) {\r\n    #LetraEspecial {\r\n        font-size: 30px;\r\n    }\r\n}"
 
 /***/ }),
 
@@ -1324,14 +1332,14 @@ var HomeComponent = /** @class */ (function () {
         var _this = this;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (pos) {
-                alert(" funciona geo");
+                //alert(" funciona geo")
                 _this.long = +pos.coords.longitude;
                 _this.lat = +pos.coords.latitude;
-                alert(_this.long + " /  " + _this.lat);
+                //alert(this.long + " /  " + this.lat)
             });
         }
         else {
-            alert("no funciona geo");
+            //alert("no funciona geo")
         }
     };
     HomeComponent.prototype.IngresarTrabajador = function () {
@@ -2176,7 +2184,7 @@ var LibroAsistenciaComponent = /** @class */ (function () {
 /***/ "./src/app/components/libro-asistencia/visualizarturnos/visualizarturnos.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n  <div class=\"row justify-content-center\">\r\n        <form class=\"form-inline\">\r\n          <div class=\"form-group mb-2\">\r\n            <label for=\"staticEmail2\" class=\"sr-only\">Email</label>\r\n                  <mat-form-field>\r\n                    <input [(ngModel)]=\"calendario\" name=\"calendario\" matInput [matDatepicker]=\"picker\" placeholder=\"Selecciona una fecha\">\r\n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #picker></mat-datepicker>\r\n                  </mat-form-field>\r\n          </div>\r\n\r\n        <div class=\"form-group mx-sm-3 mb-2\">\r\n            \r\n          </div>\r\n           <button (click)=\"ActualizarFecha()\" mat-raised-button color=\"primary\">Ir </button>\r\n        </form>\r\n</div>\r\n    <!-- <div class=\"input-group mb-3 row justify-content-center\"><button type=\"button\" class=\"btn btn-outline-primary\">Buscar</button></div>\r\n     <p>Value: {{ name }}</p> <p>Valid: {{ ctrl.dirty }}</p>\r\n   -->\r\n\r\n    <table class=\"table table-hover table-responsive-lg table-dark\">\r\n        <thead>\r\n            <tr>\r\n                <th scope=\"col\">Nombre</th>\r\n                <th scope=\"col\">Apellido</th>\r\n                <th scope=\"col\">Movimiento</th>\r\n                <th scope=\"col\">Rut</th>\r\n                <th scope=\"col\">Ubicación</th>\r\n                <th scope=\"col\">Imagenes</th>\r\n            </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n\r\n            <tr *ngFor=\"let movimientos of movimientos\">\r\n\r\n                <th [routerLink]=\"['/DashBoard', movimientos.rut]\" scope=\"row\" style=\"cursor:pointer\">{{ movimientos.nombre }}</th>\r\n                <td>{{ movimientos.apellido }}</td>\r\n                <td>{{ movimientos.movimiento | titlecase }}</td>\r\n                <td>{{ movimientos.rut }}</td>\r\n                 <td><button (click)=\"VisualizandoMapa(movimientos.locacion.lat, movimientos.locacion.long)\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n \t\t\t\t\t\t\t Visualizar mapa\r\n\t\t\t\t\t\t\t</button></td>\r\n\r\n\r\n\t\t\t\t <td><button (click)=\"visualizarImagenes(movimientos.fecha, movimientos.rut)\" type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#exampleModal1\">\r\n \t\t\t\t\t\t\t Imagenes Registro\r\n\t\t\t\t\t\t\t</button></td>\t\t\t\r\n\r\n            </tr>\r\n\r\n        </tbody>\r\n\r\n        \r\n    </table>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-lg\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Mapa</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        \t<agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n \t\t\t\t <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n\t\t\t</agm-map>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-lg\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Mapa</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n       \r\n        <li *ngFor=\"let imagenes of imagenes ; let i =index\" >\r\n        \t\r\n        \t<img style=\"width:70%\" [src]=\"imagArray[i] | async\">\r\n        </li>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container\" style=\"margin-top:50px;padding:35px;\">\r\n\r\n\r\n  <div class=\"row justify-content-center\">\r\n        <form class=\"form-inline\">\r\n          <div class=\"form-group mb-2\">\r\n            <label for=\"staticEmail2\" class=\"sr-only\">Email</label>\r\n                  <mat-form-field>\r\n                    <input [(ngModel)]=\"calendario\" name=\"calendario\" matInput [matDatepicker]=\"picker\" placeholder=\"Selecciona una fecha\">\r\n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #picker></mat-datepicker>\r\n                  </mat-form-field>\r\n          </div>\r\n\r\n        <div class=\"form-group mx-sm-3 mb-2\">\r\n            \r\n          </div>\r\n           <button (click)=\"ActualizarFecha()\" mat-raised-button color=\"primary\">Ir </button>\r\n        </form>\r\n</div>\r\n    <!-- <div class=\"input-group mb-3 row justify-content-center\"><button type=\"button\" class=\"btn btn-outline-primary\">Buscar</button></div>\r\n     <p>Value: {{ name }}</p> <p>Valid: {{ ctrl.dirty }}</p>\r\n   -->\r\n\r\n    <table class=\"table table-hover table-responsive-lg table-dark\">\r\n        <thead>\r\n            <tr>\r\n                <th scope=\"col\">Nombre</th>\r\n                <th scope=\"col\">Apellido</th>\r\n                <th scope=\"col\">Movimiento</th>\r\n                <th scope=\"col\">Rut</th>\r\n                <th scope=\"col\">Ubicación</th>\r\n                <th scope=\"col\">Imagenes</th>\r\n            </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n\r\n            <tr *ngFor=\"let movimientos of movimientos\">\r\n\r\n                <th [routerLink]=\"['/DashBoard', movimientos.rut]\" scope=\"row\" style=\"cursor:pointer\">{{ movimientos.nombre }}</th>\r\n                <td>{{ movimientos.apellido }}</td>\r\n                <td>{{ movimientos.movimiento | titlecase }}</td>\r\n                <td>{{ movimientos.rut }}</td>\r\n                 <td><button (click)=\"VisualizandoMapa(movimientos.locacion.lat, movimientos.locacion.long)\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n \t\t\t\t\t\t\t Visualizar mapa\r\n\t\t\t\t\t\t\t</button></td>\r\n\r\n\r\n\t\t\t\t <td><button (click)=\"visualizarImagenes(movimientos.fecha, movimientos.rut)\" type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#exampleModal1\">\r\n \t\t\t\t\t\t\t Imagenes Registro\r\n\t\t\t\t\t\t\t</button></td>\t\t\t\r\n\r\n            </tr>\r\n\r\n        </tbody>\r\n\r\n        \r\n    </table>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-lg\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Mapa</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        \t<agm-map style=\"height:300px;\" [latitude]=\"lat\" [longitude]=\"long\"  zoomControl=\"true\">\r\n \t\t\t\t <agm-marker [latitude]=\"lat\" [longitude]=\"long\"  ></agm-marker>\r\n\t\t\t</agm-map>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-lg\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Respaldo</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n       \r\n        <li *ngFor=\"let imagArray of imagArray ; let i =index\" >\r\n        \t\r\n        \t<img style=\"width:70%\" [src]=\"imagArray | async\">\r\n        </li>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n       \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2222,18 +2230,30 @@ var VisualizarturnosComponent = /** @class */ (function () {
     }
     VisualizarturnosComponent.prototype.ngOnInit = function () {
     };
+    VisualizarturnosComponent.prototype.getURL = function (minutos, fecha, rut) {
+        var _this = this;
+        this.db.collection('urlImagenes', function (ref) { return ref.where('rut', '==', rut).where('minuto', '==', minutos); }).valueChanges().subscribe(function (data) {
+            _this.imagenes = data;
+            for (var i = 0; i < data.length; ++i) {
+                _this.imagArray.push(_this.storage.ref(data[i]['url']).getDownloadURL());
+            }
+        });
+    }; // Fin función getURL
     VisualizarturnosComponent.prototype.visualizarImagenes = function (fecha, rut) {
         var _this = this;
+        this.imagArray = [];
         var minutos = this._crudService.minutosTranscurridas(fecha);
-        console.log(minutos);
         this.db.collection('urlImagenes', function (ref) { return ref.where('rut', '==', rut).where('minuto', '==', minutos); }).valueChanges().subscribe(function (data) {
             console.log(data);
             _this.imagenes = data;
             for (var i = 0; i < data.length; ++i) {
-                console.log(data[i]['url']);
                 _this.imagArray.push(_this.storage.ref(data[i]['url']).getDownloadURL());
             }
         });
+        this.getURL(minutos + 2, fecha, rut);
+        this.getURL(minutos + 1, fecha, rut);
+        this.getURL(minutos - 1, fecha, rut);
+        this.getURL(minutos - 2, fecha, rut);
     };
     VisualizarturnosComponent.prototype.VisualizandoMapa = function (lat, long) {
         this.lat = lat;
