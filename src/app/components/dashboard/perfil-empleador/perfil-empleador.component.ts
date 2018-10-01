@@ -16,7 +16,7 @@ import { LoginservicesService } from './../../../services/loginservices.service'
 })
 export class PerfilEmpleadorComponent implements OnInit {
   public imagenes:any;
-public DeteccionRostro:boolean=false;
+public DeteccionRostro:boolean=true;
 imagArray: any[] = [];
       public secondFormGroup : any;
       meta: Observable<any>;
@@ -303,11 +303,11 @@ this._crudService.getTrabajadores(this.rut).subscribe(data => {
                     
                     this.reconocerFacialServices.reconocimiento( JSON.stringify({url: imageUrl}) ).subscribe(datos => {
                            console.log("yapo.. y", datos)
-                           let peo = JSON.stringify(datos)
+                         /*  let peo = JSON.stringify(datos)
                            if(peo.search('x')>-1){
                              this.DeteccionRostro = true;
                            }
-                       })
+*/                       })
 
   this.imagArray.push(imageUrl);
 }); 
@@ -335,10 +335,10 @@ for (let i = 0; i < data.length; ++i) {
 
    this.reconocerFacialServices.reconocimiento( JSON.stringify({url: imageUrl}) ).subscribe(datos => {
                            console.log("yapo.. y", datos)
-                           let peo = JSON.stringify(datos)
+                          /* let peo = JSON.stringify(datos)
                            if(peo.search('x')>-1){
                              this.DeteccionRostro = true;
-                           }
+                           }*/
                        })
 
   this.imagArray.push(imageUrl);
