@@ -25,8 +25,12 @@ export class RutasservidorService {
     'LiberarSueldo': 'http://127.0.0.1/api/LiberarSueldo/',
     'ConfirmarEstadoSueldo': 'http://127.0.0.1/api/ConfirmarEstadoSueldo/',
     'SueldosLiberados': 'http://127.0.0.1/api/SueldosLiberados/',
-    'SueldosLiberadosPorFecha': 'http://127.0.0.1/api/SueldosLiberadosPorFecha/'
+    'SueldosLiberadosPorFecha': 'http://127.0.0.1/api/SueldosLiberadosPorFecha/',
+   // 'ReconocerRostro':'http://192.168.0.13/Proyectos/ReconocimientoFacial/image.php'
+ // 'ReconocerRostro':'http://181.75.153.73/ReconocimientoFacial/image.php'   //curl https://www.dataplicity.com/g1dsngcn.py | sudo python
+   'ReconocerRostro':'https://overstrung-millipede-5664.dataplicity.io/ReconocimientoFacial/image.php' 
 
   };
+
 
 }

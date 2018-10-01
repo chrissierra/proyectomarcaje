@@ -109,7 +109,7 @@ export class IngresoSucursalComponent implements OnInit   {
   } // Fin findLocation
 
 
-  markerDragEnd(m: any, $event: any) {
+  markerDragEnd(m: any) {
    this.location.marker.lat = m.coords.lat;
    this.location.marker.lng = m.coords.lng;
    this.findAddressByCoordinates();

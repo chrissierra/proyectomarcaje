@@ -23,7 +23,7 @@ export class LiberarSueldosComponent  {
   total_afp:number;
   total_isapre:number;
 
-  
+  selectedTab:any;
   constructor(private SueldoServicio_: SueldosService,
               public PerfilTrabajador: PerfilTrabajadorServiceService,
               private snackBar: MatSnackBar, 

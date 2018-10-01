@@ -42,9 +42,23 @@
                    <form [formGroup]="firstFormGroup">
                       <ng-template matStepLabel>Ingresa tu rut</ng-template>
 
-
+   <webcam [height]="45" [width]="45" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+           
+            [videoOptions]="videoOptions"
+            
+            (initError)="handleInitError($event)"
+    ></webcam>
                 <!--<pre><code>{{ meta | async }}</code></pre>
-                <img [src]=" meta | async">-->
+                <img [src]=" meta | async">
+
+
+   <webcam [height]="45" [width]="45" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+            [videoOptions]="videoOptions"
+            (cameraSwitched)="cameraWasSwitched($event)"
+            (initError)="handleInitError($event)"
+    ></webcam>
+              -->
 
 
                       <mat-form-field>
@@ -94,8 +108,15 @@
     <p *ngIf="currentMov != 'listo'" class="card-text">Recuerda que al marcar será irreversible la hora y ubicación, marca cuidadosamente tu turno. También debes firmar el libro de asistencia.    </p>  
 
      <p *ngIf="currentMov == 'listo'" class="card-text">Los turnos de hoy han sido realizados .    </p>  
+        <div *ngIf="DeteccionRostro">
   <button (click)="FuncionMarcarEntrada()" *ngIf="currentMov == 'entrada' " type="button" class="btn btn-outline-primary">Marca Entrada</button>
+
   <button (click)="FuncionMarcarEntrada()" *ngIf="currentMov == 'salida' "  type="button" class="btn btn-outline-primary">Marca Salida</button>
+        </div>
+
+
+        <div  *ngIf="!DeteccionRostro"><h3>Debes mostrar claramente tu rostro</h3></div>
+
 
   </div>
 </div>
@@ -113,12 +134,7 @@
   </h1>
 
   <div> -->
-    <webcam [height]="0" [width]="0" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
-            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
-            [videoOptions]="videoOptions"
-            (cameraSwitched)="cameraWasSwitched($event)"
-            (initError)="handleInitError($event)"
-    ></webcam><!--
+ <!--
     <br/>
     <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
     <button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button>

@@ -8,7 +8,7 @@
             <span class="input-group-text" id="basic-addon1">Busca un trabajador</span>
         </div>
 
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="name" #ctrl="ngModel">
+    
     </div>
 
     <!-- <div class="input-group mb-3 row justify-content-center"><button type="button" class="btn btn-outline-primary">Buscar</button></div>
@@ -25,7 +25,7 @@
             </tr>
         </thead>
 
-        <tbody *ngIf="ctrl.dirty == false || name.length == 0">
+        <tbody >
 
             <tr *ngFor="let empleados of empleados">
 
@@ -38,15 +38,6 @@
 
         </tbody>
 
-        <tbody *ngIf="ctrl.dirty == true && name.length > 0">
-
-            <tr *ngFor="let empleados of empleados">
-
-                <th [routerLink]="['/PerfilTrabajador', empleados.id]" *ngIf="empleados.nombre.toLowerCase().search(name.toLowerCase()) >= 0 || empleados.apellido.toLowerCase().search(name.toLowerCase()) >= 0" scope="row">{{ empleados.nombre }}</th>
-                <td *ngIf="empleados.nombre.toLowerCase().search(name.toLowerCase()) >= 0 || empleados.apellido.toLowerCase().search(name.toLowerCase()) >= 0">{{ empleados.apellido }}</td>
-                <td *ngIf="empleados.nombre.toLowerCase().search(name.toLowerCase()) >= 0 || empleados.apellido.toLowerCase().search(name.toLowerCase()) >= 0">{{ empleados.puesto }}</td>
-                <td *ngIf="empleados.nombre.toLowerCase().search(name.toLowerCase()) >= 0 || empleados.apellido.toLowerCase().search(name.toLowerCase()) >= 0">{{ empleados.isapre }}mdo</td>
-            </tr>
-        </tbody>
+   
     </table>
 </div>

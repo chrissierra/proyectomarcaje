@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 
 // Angular material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -25,8 +27,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
-
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 //Camara
 import {WebcamModule} from 'ngx-webcam';
 
@@ -82,6 +84,7 @@ import { AppService } from './app.service';
 import { SueldosService } from './services/sueldos.service';
 import { VisualizacionLiquidacionesComponent } from './components/perfil-trabajador/visualizacion-liquidaciones/visualizacion-liquidaciones.component';
 import { CrudService } from './services/crud.service';
+import { MessagingService } from './services/messaging.service';
 
 
 
@@ -123,11 +126,13 @@ import { CrudService } from './services/crud.service';
   ],
   imports: [
     BrowserModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     WebcamModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule,
     peo,
     FormsModule,
     ReactiveFormsModule,
@@ -157,6 +162,7 @@ import { CrudService } from './services/crud.service';
               PlanillaservicesService,
               PerfilTrabajadorServiceService,
               LiberarTurnosService,
+              MessagingService,
               GoogleMapsAPIWrapper,
               GuardarSucursalService,
               MarcajeServiceService,

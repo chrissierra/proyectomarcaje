@@ -3,11 +3,14 @@ import { CrudService } from '../../services/crud.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
+import { mergeMapTo } from 'rxjs/operators';
+import { SwPush } from '@angular/service-worker';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
+  public message: any;
   long:any;
   lat:any;
 cargo:string;
@@ -19,7 +22,7 @@ nombre_empresa: string = localStorage.getItem('nombre_empresa');
 nombre_rep: string = localStorage.getItem('nombre_rep');
 public items: Observable<any[]>;
 
-constructor(public _crudService:  CrudService, db: AngularFirestore, private param: ActivatedRoute, private router : Router) {
+constructor( swPush: SwPush, public _crudService:  CrudService, db: AngularFirestore, private param: ActivatedRoute, private router : Router) {
  
   	this.items = db.collection('items',  ref => ref.where('nombre', '==', 'uno').where('nombre', '==', 'uno')).valueChanges();
   	console.log(this.items);
@@ -37,6 +40,10 @@ constructor(public _crudService:  CrudService, db: AngularFirestore, private par
    }
 
   ngOnInit() {
+
+      
+
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition( pos => {
  //alert(" funciona geo")
@@ -55,6 +62,8 @@ IngresarTrabajador(){
 this._crudService.ingresarTrabajador(this.nombre, this.apellido, this.rut, this.cargo);
 this.router.navigate(['./']);
 } // Fin función IngresarTrabajador
+
+
 
 
 }

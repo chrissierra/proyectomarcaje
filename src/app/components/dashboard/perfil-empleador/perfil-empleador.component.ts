@@ -8,13 +8,17 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { map } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LoginservicesService } from './../../../services/loginservices.service';
 @Component({
   selector: 'app-perfil-empleador',
   templateUrl: './perfil-empleador.component.html',
   styleUrls: ['./perfil-empleador.css']
 })
 export class PerfilEmpleadorComponent implements OnInit {
-      
+  public imagenes:any;
+public DeteccionRostro:boolean=false;
+imagArray: any[] = [];
+      public secondFormGroup : any;
       meta: Observable<any>;
       public rut:any;
       public currentMov: any;
@@ -50,7 +54,8 @@ export class PerfilEmpleadorComponent implements OnInit {
        private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
   
-  constructor(private param: ActivatedRoute,
+  constructor(private reconocerFacialServices:LoginservicesService,
+              private param: ActivatedRoute,
               private _formBuilder: FormBuilder, 
               public _crudService:  CrudService,
               public  db: AngularFirestore,
@@ -176,6 +181,25 @@ this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.n
     
      
     }); // Fin Subscribe
+
+
+     //**** ACA DEBO HACER LO QUE CORRESPONDE A RECONOCIMIENTO FACIAL:
+ 
+
+     this.visualizarImagenes(new Date().getTime(), this.rut);
+
+   
+/*
+this.reconocerFacialServices.reconocimiento( JSON.stringify(arrayURLS) ).subscribe(datos => {
+         console.log(datos)
+     })
+*/
+
+
+     //¨**** FIN REC. FACIAL
+
+
+
   } // Fin función BuscarRutMovimientosAsociados
 
   GuardarFotos(){
@@ -189,6 +213,9 @@ this.getMovimiento( this.diferenciaUltimoRegistro, this.UltimoMovimiento ,this.n
      let url = this.rut+'/'+this._crudService.diasTranscurridas(new Date().getTime())+'/'+this._crudService.minutosTranscurridas(new Date().getTime())+'/'+new Date().getTime() + '.jpeg';
      this.storage.ref( this.rut+'/'+this._crudService.diasTranscurridas(new Date().getTime())+'/'+this._crudService.minutosTranscurridas(new Date().getTime())+'/'+new Date().getTime() + '.jpeg').putString(img, 'data_url', { customMetadata: { blah: 'blah' } });
      this._crudService.ingresarUrlaDB(this.rut, new Date().getTime(),url )
+
+
+
   } // Fin función GuardarFotos
 
 
@@ -254,5 +281,74 @@ this._crudService.getTrabajadores(this.rut).subscribe(data => {
 
     //alert(this.currentMov);
   } // Fin función FuncionMarcarEntrada
+
+
+
+
+
+
+
+
+
+  private getURL(minutos, fecha , rut){
+  this.db.collection('urlImagenes', ref => ref.where('rut', '==', rut).where('minuto', '==', minutos)).valueChanges().subscribe(data => {
+
+        this.imagenes= data;
+        
+        for (let i = 0; i < data.length; ++i) {
+
+                this.storage.ref(data[i]['url']).getDownloadURL().subscribe(downloadURL => {
+  const imageUrl = downloadURL;
+  //console.log('URL:' + imageUrl);
+                    
+                    this.reconocerFacialServices.reconocimiento( JSON.stringify({url: imageUrl}) ).subscribe(datos => {
+                           console.log("yapo.. y", datos)
+                           let peo = JSON.stringify(datos)
+                           if(peo.search('x')>-1){
+                             this.DeteccionRostro = true;
+                           }
+                       })
+
+  this.imagArray.push(imageUrl);
+}); 
+   
+        }
+        })
+} // Fin función getURL
+
+
+visualizarImagenes(fecha, rut){
+//this.imagArray = [];
+ 
+let minutos= this._crudService.minutosTranscurridas(fecha);
+
+
+this.db.collection('urlImagenes', ref => ref.where('rut', '==', rut).where('minuto', '==', minutos)).valueChanges().subscribe(data => {
+console.log(data)
+this.imagenes= data;
+for (let i = 0; i < data.length; ++i) {
+
+
+                   this.storage.ref(data[i]['url']).getDownloadURL().subscribe(downloadURL => {
+  const imageUrl = downloadURL;
+  //console.log('URL:' + imageUrl);
+
+   this.reconocerFacialServices.reconocimiento( JSON.stringify({url: imageUrl}) ).subscribe(datos => {
+                           console.log("yapo.. y", datos)
+                           let peo = JSON.stringify(datos)
+                           if(peo.search('x')>-1){
+                             this.DeteccionRostro = true;
+                           }
+                       })
+
+  this.imagArray.push(imageUrl);
+}); 
+}
+})
+this.getURL(minutos + 2 , fecha, rut)
+this.getURL(minutos + 1 , fecha, rut)
+this.getURL(minutos - 1 , fecha, rut)
+this.getURL(minutos - 2 , fecha, rut)
+}
 
 }
